@@ -24,4 +24,10 @@ Amazingly, A+Papers has resonated strongly with each community of students and w
  git clone https://github.com/danesh-23/Shopify-Mobile-Challenge-2020.git
 ```  
 
-2. 
+2. Install the pods required in the Podfile using Cocoapod dependency manager. If you have it installed, navigate to the Podfile path within the app directory and type the command below. If you dont have it installed, you can follow the guide [here](https://guides.cocoapods.org/using/getting-started.html)
+```
+pod install
+```  
+3. You should see a Pods directory generated. Only use the file with the .xcworkspace extension from now on as that is the file the dependencies are integrated with.  
+
+That's it. You can now use the app as you like on Xcode, have fun :grin:  
