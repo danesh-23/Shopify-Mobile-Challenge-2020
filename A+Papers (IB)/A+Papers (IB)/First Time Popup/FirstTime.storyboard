@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FCQ-3c-8Hx">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--First Time PopupVC-->
+        <scene sceneID="96G-uh-OOx">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="FCQ-3c-8Hx" customClass="FirstTimePopupVC" customModule="APlusPapersIB" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ptQ-aU-hO3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-814" y="44"/>
+        </scene>
+        <!--First TimeVC1-->
+        <scene sceneID="BHJ-ns-CRq">
+            <objects>
+                <viewController storyboardIdentifier="sb_firsttime1" id="P9E-4B-283" customClass="FirstTimeVC1" customModule="APlusPapersIB" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LtM-Wx-bZM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="airprint_ss" translatesAutoresizingMaskIntoConstraints="NO" id="pOT-Ym-F4L">
+                                <rect key="frame" x="20" y="363" width="374" height="333"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="lfr-he-2tt">
+                                <rect key="frame" x="20" y="80" width="374" height="275"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Welcome to A+Papers. We introduce to you our latest AirPrint feature. You can now print any paper just by the click of a single button.
+
+Simply click on the AirPrint icon on the top right hand of the PDF paper as shown below.
+*Pinch and zoom to enlarge images*</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="19"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AirPrint Feature" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pG5-KN-ZQU">
+                                <rect key="frame" x="20" y="20" width="374" height="33"/>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.7803921568627451" green="0.68627450980392157" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="pOT-Ym-F4L" firstAttribute="top" secondItem="4LP-Z6-6Q3" secondAttribute="top" constant="363" id="2N8-28-fAH"/>
+                            <constraint firstItem="lfr-he-2tt" firstAttribute="leading" secondItem="4LP-Z6-6Q3" secondAttribute="leading" constant="20" id="4P7-og-aVz"/>
+                            <constraint firstItem="4LP-Z6-6Q3" firstAttribute="trailing" secondItem="pOT-Ym-F4L" secondAttribute="trailing" constant="20" id="4QL-hC-2ZH"/>
+                            <constraint firstItem="4LP-Z6-6Q3" firstAttribute="trailing" secondItem="lfr-he-2tt" secondAttribute="trailing" constant="20" id="GQs-8D-Y1x"/>
+                            <constraint firstItem="pOT-Ym-F4L" firstAttribute="leading" secondItem="4LP-Z6-6Q3" secondAttribute="leading" constant="20" id="Ic9-EE-0Ug"/>
+                            <constraint firstItem="pG5-KN-ZQU" firstAttribute="top" secondItem="4LP-Z6-6Q3" secondAttribute="top" constant="20" id="NA5-s9-T0i"/>
+                            <constraint firstItem="4LP-Z6-6Q3" firstAttribute="bottom" secondItem="pOT-Ym-F4L" secondAttribute="bottom" constant="40" id="ROi-iU-8gZ"/>
+                            <constraint firstItem="lfr-he-2tt" firstAttribute="top" secondItem="pG5-KN-ZQU" secondAttribute="bottom" constant="27" id="c0A-6z-4oj"/>
+                            <constraint firstItem="4LP-Z6-6Q3" firstAttribute="trailing" secondItem="pG5-KN-ZQU" secondAttribute="trailing" constant="20" id="hdF-zc-VK8"/>
+                            <constraint firstItem="pG5-KN-ZQU" firstAttribute="leading" secondItem="4LP-Z6-6Q3" secondAttribute="leading" constant="20" id="rpD-66-EqT"/>
+                            <constraint firstItem="pOT-Ym-F4L" firstAttribute="top" secondItem="lfr-he-2tt" secondAttribute="bottom" constant="8" id="u1e-L7-IAj"/>
+                            <constraint firstItem="pOT-Ym-F4L" firstAttribute="top" secondItem="lfr-he-2tt" secondAttribute="bottom" constant="8" id="vPM-n6-KP5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4LP-Z6-6Q3"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="pOT-Ym-F4L" id="sEL-0T-MOJ"/>
+                        <outlet property="textView" destination="lfr-he-2tt" id="ljV-FO-Wsf"/>
+                        <outlet property="titleText" destination="pG5-KN-ZQU" id="g2t-uP-CG3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aen-JB-TKY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-13.043478260869566" y="40.760869565217398"/>
+        </scene>
+        <!--First TimeVC2-->
+        <scene sceneID="usE-Y3-00r">
+            <objects>
+                <viewController storyboardIdentifier="sb_firsttime2" id="6sM-yc-cXf" customClass="FirstTimeVC2" customModule="APlusPapersIB" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5bx-lG-94a">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="PvD-qc-Gqj">
+                                <rect key="frame" x="20" y="20" width="374" height="301"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Once you click on the AirPrint icon, we will present a popup where you can choose the printer you would like to use (that supports AirPrint) and customize various properties such as black or white or number of copies etc. 
+
+Then click Print and youre done. Hope you enjoy :)</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="airprint_ss2" translatesAutoresizingMaskIntoConstraints="NO" id="EnH-pu-KQu">
+                                <rect key="frame" x="20" y="329" width="374" height="367"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.7803921568627451" green="0.68627450980392157" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="PvD-qc-Gqj" firstAttribute="leading" secondItem="jzF-Av-kVa" secondAttribute="leading" constant="20" id="757-MR-roy"/>
+                            <constraint firstItem="EnH-pu-KQu" firstAttribute="leading" secondItem="jzF-Av-kVa" secondAttribute="leading" constant="20" id="BWD-44-c5B"/>
+                            <constraint firstItem="jzF-Av-kVa" firstAttribute="trailing" secondItem="PvD-qc-Gqj" secondAttribute="trailing" constant="20" id="Jcg-w4-2Tn"/>
+                            <constraint firstItem="PvD-qc-Gqj" firstAttribute="top" secondItem="jzF-Av-kVa" secondAttribute="top" constant="20" id="RRY-H3-R4g"/>
+                            <constraint firstItem="EnH-pu-KQu" firstAttribute="top" secondItem="jzF-Av-kVa" secondAttribute="top" constant="329" id="Tb8-Kr-21T"/>
+                            <constraint firstItem="jzF-Av-kVa" firstAttribute="trailing" secondItem="EnH-pu-KQu" secondAttribute="trailing" constant="20" id="UCF-Qz-Nwv"/>
+                            <constraint firstItem="jzF-Av-kVa" firstAttribute="bottom" secondItem="EnH-pu-KQu" secondAttribute="bottom" constant="40" id="itO-Pp-56m"/>
+                            <constraint firstItem="EnH-pu-KQu" firstAttribute="top" secondItem="PvD-qc-Gqj" secondAttribute="bottom" constant="8" id="yrM-H6-0az"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jzF-Av-kVa"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="EnH-pu-KQu" id="W81-id-WS0"/>
+                        <outlet property="textView" destination="PvD-qc-Gqj" id="8JM-Xv-Fxx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2jz-1Z-sbR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="737.68115942028987" y="46.467391304347828"/>
+        </scene>
+        <!--First TimeVC3-->
+        <scene sceneID="dJC-VJ-2zF">
+            <objects>
+                <viewController storyboardIdentifier="sb_popup2" id="oQY-8d-7Ew" customClass="FirstTimeVC3" customModule="APlusPapersIB" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8l6-dV-131">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="You may get more information on this by visiting the Help section by clicking on the Help button in the menu bar above." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="rg7-MN-3kl">
+                                <rect key="frame" x="16" y="588" width="382" height="128"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="19"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="25"/>
+                                </variation>
+                            </textView>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ss_downpapersopt.png" translatesAutoresizingMaskIntoConstraints="NO" id="Wxw-jU-2FZ">
+                                <rect key="frame" x="16" y="181" width="193" height="399"/>
+                            </imageView>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ss_downloadpaper.png" translatesAutoresizingMaskIntoConstraints="NO" id="cTY-3N-kev">
+                                <rect key="frame" x="249" y="176" width="149" height="404"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Important Features Introduced" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="lax-sT-jtn">
+                                <rect key="frame" x="16" y="0.0" width="382" height="26"/>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="29"/>
+                                </variation>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="We present to you, PaperSaver : Your ultimate saviour for accessing and viewing the papers without an internet connection." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Dfz-Vz-06M">
+                                <rect key="frame" x="16" y="46" width="382" height="122"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="19"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="25"/>
+                                </variation>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.86666666670000003" green="0.96862745100000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="rgW-Yh-MSl" firstAttribute="trailing" secondItem="Dfz-Vz-06M" secondAttribute="trailing" constant="16" id="7ov-rD-oSw"/>
+                            <constraint firstItem="Wxw-jU-2FZ" firstAttribute="top" secondItem="Dfz-Vz-06M" secondAttribute="bottom" constant="13" id="Gag-xC-jP7"/>
+                            <constraint firstItem="cTY-3N-kev" firstAttribute="top" secondItem="rgW-Yh-MSl" secondAttribute="top" constant="176" id="KBo-RS-Owf"/>
+                            <constraint firstItem="rgW-Yh-MSl" firstAttribute="bottom" secondItem="cTY-3N-kev" secondAttribute="bottom" constant="156" id="KTA-wQ-acM"/>
+                            <constraint firstItem="cTY-3N-kev" firstAttribute="leading" secondItem="Wxw-jU-2FZ" secondAttribute="trailing" constant="40" id="LVh-Vv-byh"/>
+                            <constraint firstItem="rg7-MN-3kl" firstAttribute="leading" secondItem="rgW-Yh-MSl" secondAttribute="leading" constant="16" id="Rvo-cO-tLp"/>
+                            <constraint firstItem="Dfz-Vz-06M" firstAttribute="top" secondItem="lax-sT-jtn" secondAttribute="bottom" constant="20" id="W8d-TF-ERY"/>
+                            <constraint firstItem="lax-sT-jtn" firstAttribute="leading" secondItem="rgW-Yh-MSl" secondAttribute="leading" constant="16" id="WgB-25-TYm"/>
+                            <constraint firstItem="rgW-Yh-MSl" firstAttribute="trailing" secondItem="Wxw-jU-2FZ" secondAttribute="trailing" constant="205" id="Y9n-e5-mMW"/>
+                            <constraint firstItem="rgW-Yh-MSl" firstAttribute="trailing" secondItem="cTY-3N-kev" secondAttribute="trailing" constant="16" id="aHb-ej-nMo"/>
+                            <constraint firstItem="rg7-MN-3kl" firstAttribute="top" secondItem="Wxw-jU-2FZ" secondAttribute="bottom" constant="8" id="aWf-Fd-jVz"/>
+                            <constraint firstItem="Wxw-jU-2FZ" firstAttribute="leading" secondItem="rgW-Yh-MSl" secondAttribute="leading" constant="16" id="bD9-yl-61u"/>
+                            <constraint firstItem="Dfz-Vz-06M" firstAttribute="leading" secondItem="rgW-Yh-MSl" secondAttribute="leading" constant="16" id="cjO-7E-TMb"/>
+                            <constraint firstItem="rgW-Yh-MSl" firstAttribute="bottom" secondItem="rg7-MN-3kl" secondAttribute="bottom" constant="20" id="eFV-gj-pue"/>
+                            <constraint firstItem="rgW-Yh-MSl" firstAttribute="bottom" secondItem="Wxw-jU-2FZ" secondAttribute="bottom" constant="156" id="fdU-Sl-ywB"/>
+                            <constraint firstItem="cTY-3N-kev" firstAttribute="top" secondItem="Dfz-Vz-06M" secondAttribute="bottom" constant="8" id="ftt-Li-Aod"/>
+                            <constraint firstItem="rgW-Yh-MSl" firstAttribute="trailing" secondItem="lax-sT-jtn" secondAttribute="trailing" constant="16" id="gDx-OV-8rr"/>
+                            <constraint firstItem="rgW-Yh-MSl" firstAttribute="trailing" secondItem="rg7-MN-3kl" secondAttribute="trailing" constant="16" id="msn-af-KLG"/>
+                            <constraint firstItem="Wxw-jU-2FZ" firstAttribute="top" secondItem="rgW-Yh-MSl" secondAttribute="top" constant="181" id="os7-R4-Dx3"/>
+                            <constraint firstItem="lax-sT-jtn" firstAttribute="top" secondItem="rgW-Yh-MSl" secondAttribute="top" id="rnQ-mj-SvY"/>
+                            <constraint firstItem="rg7-MN-3kl" firstAttribute="top" secondItem="cTY-3N-kev" secondAttribute="bottom" constant="8" id="tYv-HK-GVv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rgW-Yh-MSl"/>
+                    </view>
+                    <connections>
+                        <outlet property="labelView" destination="lax-sT-jtn" id="9ff-Xh-xft"/>
+                        <outlet property="textView1" destination="Dfz-Vz-06M" id="gLV-2x-IgJ"/>
+                        <outlet property="textView2" destination="rg7-MN-3kl" id="Fab-as-Kdq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HwU-FD-Azz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="738" y="825"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="airprint_ss" width="414" height="736"/>
+        <image name="airprint_ss2" width="414" height="736"/>
+        <image name="ss_downloadpaper.png" width="16" height="16"/>
+        <image name="ss_downpapersopt.png" width="16" height="16"/>
+    </resources>
+</document>

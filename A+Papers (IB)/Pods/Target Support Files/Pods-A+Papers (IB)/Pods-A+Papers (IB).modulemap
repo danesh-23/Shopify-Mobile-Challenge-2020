@@ -1,0 +1,6 @@
+framework module Pods_A_Papers__IB_ {
+  umbrella header "Pods-A+Papers (IB)-umbrella.h"
+
+  export *
+  module * { export * }
+}

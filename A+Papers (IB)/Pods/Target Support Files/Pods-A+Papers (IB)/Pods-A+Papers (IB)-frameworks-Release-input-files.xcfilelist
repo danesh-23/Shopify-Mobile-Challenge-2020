@@ -1,0 +1,5 @@
+${PODS_ROOT}/Target Support Files/Pods-A+Papers (IB)/Pods-A+Papers (IB)-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework
+${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework
+${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework

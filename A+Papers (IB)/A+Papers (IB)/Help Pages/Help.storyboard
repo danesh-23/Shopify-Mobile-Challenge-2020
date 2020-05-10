@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XLa-l2-aBc">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Help PagesVC-->
+        <scene sceneID="Dbm-Zj-TID">
+            <objects>
+                <pageViewController storyboardIdentifier="pageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="XLa-l2-aBc" customClass="HelpPagesVC" customModule="APlusPapersIB" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="77B-2N-rDm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-255" y="134"/>
+        </scene>
+        <!--First Help PageVC-->
+        <scene sceneID="pIk-T9-iMk">
+            <objects>
+                <viewController storyboardIdentifier="sb_help1" id="1Q3-Mk-TJj" customClass="FirstHelpPageVC" customModule="APlusPapersIB" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="M9c-ma-iRQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fru-vH-mDn">
+                                <rect key="frame" x="8" y="64.666666666666657" width="398" height="416.33333333333337"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Welcome to the Help page.
+You can find help here regarding the app and how to use it and any current or future features that will be added.
+1. Accessing papers for offline use.
+
+You may download and save papers for use WITHOUT an internet connection with our latest added in-app feature.
+
+We present to you, PaperSaver : Your ultimate saviour for accessing and viewing the papers without an internet connection.
+
+PaperSaver allows users the option to download the papers and save them in your iPhone or even on iCloud or Google Drive etc. We have also added a supporting feature which lists the papers downloaded and presents them to you and you can click any to open them up.
+
+For any further enquiries or suggestions or improvements/complaints about the app, please tap on 'Message' and type your message; click Send, and the A+Papers board will be notified."</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="34"/>
+                                </variation>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Help" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HEJ-X1-iPw">
+                                <rect key="frame" x="16" y="12" width="382" height="32.666666666666664"/>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="36"/>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFx-lI-214">
+                                <rect key="frame" x="0.0" y="663" width="128" height="38"/>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="20"/>
+                                <state key="normal" title="Message Us"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="35"/>
+                                </variation>
+                                <connections>
+                                    <action selector="messageUsBtn:" destination="1Q3-Mk-TJj" eventType="touchUpInside" id="sjI-Ef-vmU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VhJ-M3-oNC">
+                                <rect key="frame" x="20" y="609" width="374" height="38"/>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="20"/>
+                                <state key="normal" title="Get PaperSaver"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="35"/>
+                                </variation>
+                                <connections>
+                                    <action selector="paperSaverButton:" destination="1Q3-Mk-TJj" eventType="touchUpInside" id="rud-w6-QnA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oc1-UZ-c7S">
+                                <rect key="frame" x="300" y="663" width="114" height="38"/>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="20"/>
+                                <state key="normal" title="Close Help"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="35"/>
+                                </variation>
+                                <connections>
+                                    <action selector="closeHelpBtn:" destination="1Q3-Mk-TJj" eventType="touchUpInside" id="2o5-np-Cwn"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="dum-Tr-KcQ">
+                                <rect key="frame" x="16" y="510" width="382" height="78"/>
+                                <string key="text">1. Using PaperSaver - pg 2
+
+2. Using AirPrint - pg 5</string>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="32"/>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.60784313729999995" green="0.87058823529999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="YdO-hY-SFW" firstAttribute="trailing" secondItem="VhJ-M3-oNC" secondAttribute="trailing" constant="20" id="3WB-QW-iwK"/>
+                            <constraint firstItem="YdO-hY-SFW" firstAttribute="trailing" secondItem="Oc1-UZ-c7S" secondAttribute="trailing" id="DYL-dg-y7y"/>
+                            <constraint firstItem="YdO-hY-SFW" firstAttribute="trailing" secondItem="dum-Tr-KcQ" secondAttribute="trailing" constant="16" id="Eux-gE-bc6"/>
+                            <constraint firstItem="fru-vH-mDn" firstAttribute="leading" secondItem="YdO-hY-SFW" secondAttribute="leading" constant="8" id="FQ0-AR-h1X"/>
+                            <constraint firstItem="YdO-hY-SFW" firstAttribute="trailing" secondItem="HEJ-X1-iPw" secondAttribute="trailing" constant="16" id="GzK-CZ-kcD"/>
+                            <constraint firstItem="cFx-lI-214" firstAttribute="leading" secondItem="YdO-hY-SFW" secondAttribute="leading" id="PaF-lN-A78"/>
+                            <constraint firstItem="HEJ-X1-iPw" firstAttribute="leading" secondItem="YdO-hY-SFW" secondAttribute="leading" constant="16" id="Pfv-5a-lvH"/>
+                            <constraint firstItem="dum-Tr-KcQ" firstAttribute="leading" secondItem="YdO-hY-SFW" secondAttribute="leading" constant="16" id="Uzq-1Y-Ydv"/>
+                            <constraint firstItem="fru-vH-mDn" firstAttribute="top" secondItem="HEJ-X1-iPw" secondAttribute="bottom" constant="20" id="Vsa-MS-17M"/>
+                            <constraint firstItem="dum-Tr-KcQ" firstAttribute="top" secondItem="fru-vH-mDn" secondAttribute="bottom" constant="29" id="WSJ-Pw-l2X"/>
+                            <constraint firstItem="YdO-hY-SFW" firstAttribute="trailing" secondItem="fru-vH-mDn" secondAttribute="trailing" constant="8" id="WZc-Kl-08U"/>
+                            <constraint firstItem="VhJ-M3-oNC" firstAttribute="top" secondItem="dum-Tr-KcQ" secondAttribute="bottom" constant="21" id="ZKz-Iz-rLL"/>
+                            <constraint firstItem="HEJ-X1-iPw" firstAttribute="top" secondItem="YdO-hY-SFW" secondAttribute="top" constant="12" id="cHb-r4-Csi"/>
+                            <constraint firstItem="YdO-hY-SFW" firstAttribute="bottom" secondItem="Oc1-UZ-c7S" secondAttribute="bottom" constant="35" id="ccf-Gw-4A1"/>
+                            <constraint firstItem="VhJ-M3-oNC" firstAttribute="leading" secondItem="YdO-hY-SFW" secondAttribute="leading" constant="20" id="dQA-yp-9SU"/>
+                            <constraint firstItem="cFx-lI-214" firstAttribute="top" secondItem="VhJ-M3-oNC" secondAttribute="bottom" constant="16" id="pph-cT-RC2"/>
+                            <constraint firstItem="YdO-hY-SFW" firstAttribute="bottom" secondItem="cFx-lI-214" secondAttribute="bottom" constant="35" id="t93-FZ-A16"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="YdO-hY-SFW"/>
+                    </view>
+                    <connections>
+                        <outlet property="closeHelpText" destination="Oc1-UZ-c7S" id="uAh-Fv-kZR"/>
+                        <outlet property="featuresLabel" destination="dum-Tr-KcQ" id="2nb-9r-JBa"/>
+                        <outlet property="mainTextView" destination="fru-vH-mDn" id="8tc-zw-T5V"/>
+                        <outlet property="messageUsText" destination="cFx-lI-214" id="4SG-91-vD8"/>
+                        <outlet property="paperSaverText" destination="VhJ-M3-oNC" id="sjf-5M-Jyo"/>
+                        <outlet property="titleTextLabel" destination="HEJ-X1-iPw" id="Nha-LD-0da"/>
+                        <segue destination="Yla-ql-ITL" kind="show" identifier="seguetogetiap" id="hRV-Q8-eGh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IBL-Ho-dtA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="447.82608695652175" y="133.69565217391306"/>
+        </scene>
+        <!--Second Help PageVC-->
+        <scene sceneID="6WF-gC-XQO">
+            <objects>
+                <viewController storyboardIdentifier="sb_help2" id="Gc6-2P-ANQ" customClass="SecondHelpPageVC" customModule="APlusPapersIB" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ore-iV-N9c">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Js5-49-hp1">
+                                <rect key="frame" x="16" y="58" width="382" height="256"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Ever wanted to print any paper  to show your friends or practise on physically? 
+
+We introduce AirPrint, the latest feature which allows users to download any paper that is on the app by simply clicking on the print icon on the top right corner, as shown in the screenshot below.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="33"/>
+                                </variation>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Using AirPrint" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CRo-dP-imP">
+                                <rect key="frame" x="16" y="12" width="382" height="26"/>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="36"/>
+                                </variation>
+                            </label>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="airprint_ss" translatesAutoresizingMaskIntoConstraints="NO" id="F04-9B-dgN">
+                                <rect key="frame" x="56" y="332" width="303" height="359"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.60784313729999995" green="0.87058823529999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="8Da-nK-CQi" firstAttribute="trailing" secondItem="CRo-dP-imP" secondAttribute="trailing" constant="16" id="0Ry-01-4bi"/>
+                            <constraint firstItem="Js5-49-hp1" firstAttribute="leading" secondItem="8Da-nK-CQi" secondAttribute="leading" constant="16" id="5mc-i1-yKJ"/>
+                            <constraint firstItem="F04-9B-dgN" firstAttribute="leading" secondItem="8Da-nK-CQi" secondAttribute="leading" constant="56" id="6Eu-kM-gcz"/>
+                            <constraint firstItem="Js5-49-hp1" firstAttribute="top" secondItem="CRo-dP-imP" secondAttribute="bottom" constant="20" id="6g0-R9-ysn"/>
+                            <constraint firstItem="F04-9B-dgN" firstAttribute="top" secondItem="Js5-49-hp1" secondAttribute="bottom" constant="18" id="Tao-SE-mNI"/>
+                            <constraint firstItem="8Da-nK-CQi" firstAttribute="bottom" secondItem="F04-9B-dgN" secondAttribute="bottom" constant="45" id="UJm-2i-EE8"/>
+                            <constraint firstItem="8Da-nK-CQi" firstAttribute="trailing" secondItem="F04-9B-dgN" secondAttribute="trailing" constant="55" id="lU7-Pt-KDm"/>
+                            <constraint firstItem="F04-9B-dgN" firstAttribute="top" secondItem="8Da-nK-CQi" secondAttribute="top" constant="332" id="n30-AY-sNm"/>
+                            <constraint firstItem="CRo-dP-imP" firstAttribute="leading" secondItem="8Da-nK-CQi" secondAttribute="leading" constant="16" id="r1R-XK-J2R"/>
+                            <constraint firstItem="8Da-nK-CQi" firstAttribute="trailing" secondItem="Js5-49-hp1" secondAttribute="trailing" constant="16" id="rzq-aY-wUW"/>
+                            <constraint firstItem="CRo-dP-imP" firstAttribute="top" secondItem="8Da-nK-CQi" secondAttribute="top" constant="12" id="wNa-rQ-V48"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8Da-nK-CQi"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="F04-9B-dgN" id="1fR-F5-OiS"/>
+                        <outlet property="mainTextView" destination="Js5-49-hp1" id="yL7-hI-NU2"/>
+                        <outlet property="titleTextLabel" destination="CRo-dP-imP" id="LaG-JF-9Sw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fxz-f7-Ste" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1181" y="134"/>
+        </scene>
+        <!--Third Help PageVC-->
+        <scene sceneID="NlB-VT-1yq">
+            <objects>
+                <viewController storyboardIdentifier="sb_help3" id="tJf-f9-gdf" customClass="ThirdHelpPageVC" customModule="APlusPapersIB" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="j8z-eG-Zz0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="airprint_ss2" translatesAutoresizingMaskIntoConstraints="NO" id="hFu-QN-yVU">
+                                <rect key="frame" x="52" y="353" width="309" height="338"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6CD-cB-6uL">
+                                <rect key="frame" x="16" y="8" width="382" height="322"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Once you click the AirPrint button, a popup would be presented which presents the user with various customizable settings.
+
+You may choose to print more than one copy for you and your friends to practise together on or even choose the color scheme.
+
+It would connect wirelessly to any surrounding printers that support AirPrint, which most modern printers do have support for.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="33"/>
+                                </variation>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.60784313729999995" green="0.87058823529999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="6CD-cB-6uL" firstAttribute="leading" secondItem="8vM-gl-fc6" secondAttribute="leading" constant="16" id="65W-LJ-aG1"/>
+                            <constraint firstItem="hFu-QN-yVU" firstAttribute="top" secondItem="6CD-cB-6uL" secondAttribute="bottom" constant="23" id="9jp-0f-t6Q"/>
+                            <constraint firstItem="6CD-cB-6uL" firstAttribute="top" secondItem="8vM-gl-fc6" secondAttribute="top" constant="8" id="JJ5-Ev-5ck"/>
+                            <constraint firstItem="8vM-gl-fc6" firstAttribute="trailing" secondItem="6CD-cB-6uL" secondAttribute="trailing" constant="16" id="Xvb-xx-4gr"/>
+                            <constraint firstItem="8vM-gl-fc6" firstAttribute="trailing" secondItem="hFu-QN-yVU" secondAttribute="trailing" constant="53" id="daS-dE-qcz"/>
+                            <constraint firstItem="8vM-gl-fc6" firstAttribute="bottom" secondItem="hFu-QN-yVU" secondAttribute="bottom" constant="45" id="drp-Rx-cAl"/>
+                            <constraint firstItem="hFu-QN-yVU" firstAttribute="leading" secondItem="8vM-gl-fc6" secondAttribute="leading" constant="52" id="m2D-1n-MR9"/>
+                            <constraint firstItem="hFu-QN-yVU" firstAttribute="top" secondItem="8vM-gl-fc6" secondAttribute="top" constant="353" id="ri4-JT-vUC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8vM-gl-fc6"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="hFu-QN-yVU" id="ZgM-rs-dbc"/>
+                        <outlet property="mainTextView" destination="6CD-cB-6uL" id="8yl-0s-xMY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FTb-I9-0LO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1920" y="134"/>
+        </scene>
+        <!--Get PaperSaver-->
+        <scene sceneID="UQT-Sl-Zgx">
+            <objects>
+                <viewController storyboardIdentifier="IAPViewController" title="Get PaperSaver" id="Yla-ql-ITL" customClass="IAPViewController" customModule="APlusPapersIB" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1OP-8I-TV7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="annie-spratt-695497-unsplash" translatesAutoresizingMaskIntoConstraints="NO" id="DeD-as-aC4">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j1V-dv-R9g">
+                                <rect key="frame" x="0.0" y="671" width="142" height="37"/>
+                                <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="19"/>
+                                <state key="normal" title="GET A+ NOW :)">
+                                    <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="28"/>
+                                </variation>
+                                <connections>
+                                    <action selector="getIAP:" destination="Yla-ql-ITL" eventType="touchUpInside" id="e94-8g-PSD"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="BLy-4p-hso">
+                                <rect key="frame" x="16" y="87" width="382" height="539"/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <mutableString key="text">Why people were demanding for this feature:
+
+• Allows users to download and save any papers.
+
+• Makes revising possible ANYWHERE!
+
+• Eradicates the need for an internet connection once papers are downloaded.
+
+• Users can prepare for being offline by a few simple clicks to have any paper downloaded, rather than screenshotting every single page of the papers.
+
+ALL of these features provided for the second lowest possible price on the App Store and under $2; an easily affordable $1.99 USD.
+
+Click below to get a bargain of a lifetime.
+
+Swipe down to close.</mutableString>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="29"/>
+                                </variation>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vx9-8h-6lC">
+                                <rect key="frame" x="213" y="668" width="201" height="40"/>
+                                <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="18"/>
+                                <state key="normal" title="RESTORE PURCHASES :)"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="18"/>
+                                </variation>
+                                <connections>
+                                    <action selector="restorePurchase:" destination="Yla-ql-ITL" eventType="touchUpInside" id="jHe-nb-VdQ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PaperSaver: Download Feature" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q1Q-ek-244">
+                                <rect key="frame" x="16" y="30" width="382" height="26"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="33"/>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="DeD-as-aC4" firstAttribute="bottom" secondItem="oEd-qv-fx7" secondAttribute="bottom" id="4Zi-cm-0lA"/>
+                            <constraint firstItem="oEd-qv-fx7" firstAttribute="trailing" secondItem="q1Q-ek-244" secondAttribute="trailing" constant="16" id="8bF-r9-EpR"/>
+                            <constraint firstItem="q1Q-ek-244" firstAttribute="top" secondItem="oEd-qv-fx7" secondAttribute="top" constant="30" id="9Hs-y8-1h6"/>
+                            <constraint firstItem="DeD-as-aC4" firstAttribute="top" secondItem="1OP-8I-TV7" secondAttribute="top" id="AIS-CO-pPf"/>
+                            <constraint firstItem="BLy-4p-hso" firstAttribute="leading" secondItem="oEd-qv-fx7" secondAttribute="leading" constant="16" id="CTB-2V-veo"/>
+                            <constraint firstItem="DeD-as-aC4" firstAttribute="trailing" secondItem="oEd-qv-fx7" secondAttribute="trailing" id="Car-Ct-pPS"/>
+                            <constraint firstItem="Vx9-8h-6lC" firstAttribute="top" secondItem="BLy-4p-hso" secondAttribute="bottom" constant="42" id="FZQ-aa-rvv"/>
+                            <constraint firstItem="DeD-as-aC4" firstAttribute="leading" secondItem="oEd-qv-fx7" secondAttribute="leading" id="Gae-9p-VTS"/>
+                            <constraint firstItem="oEd-qv-fx7" firstAttribute="bottom" secondItem="j1V-dv-R9g" secondAttribute="bottom" constant="8" id="HoJ-ir-ZFy"/>
+                            <constraint firstItem="j1V-dv-R9g" firstAttribute="top" secondItem="BLy-4p-hso" secondAttribute="bottom" constant="45" id="NdJ-lt-BdD"/>
+                            <constraint firstItem="oEd-qv-fx7" firstAttribute="trailing" secondItem="BLy-4p-hso" secondAttribute="trailing" constant="16" id="POk-Jd-ec3"/>
+                            <constraint firstItem="BLy-4p-hso" firstAttribute="top" secondItem="q1Q-ek-244" secondAttribute="bottom" constant="31" id="TUu-dR-kFD"/>
+                            <constraint firstItem="Vx9-8h-6lC" firstAttribute="trailing" secondItem="oEd-qv-fx7" secondAttribute="trailing" id="d73-MN-Sj5"/>
+                            <constraint firstItem="oEd-qv-fx7" firstAttribute="bottom" secondItem="Vx9-8h-6lC" secondAttribute="bottom" constant="8" id="djt-Or-LgO"/>
+                            <constraint firstItem="q1Q-ek-244" firstAttribute="leading" secondItem="oEd-qv-fx7" secondAttribute="leading" constant="16" id="ps5-BG-FLT"/>
+                            <constraint firstItem="j1V-dv-R9g" firstAttribute="leading" secondItem="oEd-qv-fx7" secondAttribute="leading" id="seE-Vv-464"/>
+                            <constraint firstItem="Vx9-8h-6lC" firstAttribute="trailing" secondItem="oEd-qv-fx7" secondAttribute="trailing" id="vKO-4z-aNS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="oEd-qv-fx7"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="j94-23-d3p"/>
+                    <connections>
+                        <outlet property="getiapbuttonView" destination="j1V-dv-R9g" id="B9K-ze-GJu"/>
+                        <outlet property="labelView" destination="q1Q-ek-244" id="9rS-B0-OVe"/>
+                        <outlet property="restorePurchasesLabel" destination="Vx9-8h-6lC" id="nPS-19-KnA"/>
+                        <outlet property="textView" destination="BLy-4p-hso" id="p0f-i0-CGP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s7L-Fj-kGy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="448" y="876"/>
+        </scene>
+        <!--Fourth HelpVC-->
+        <scene sceneID="WlV-AE-010">
+            <objects>
+                <viewController storyboardIdentifier="sb_help4" id="oM7-hK-3kH" customClass="FourthHelpVC" customModule="APlusPapersIB" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MrM-nH-wdE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="3cx-1u-wwI">
+                                <rect key="frame" x="0.0" y="54" width="414" height="251"/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Navigate to the 'Papers' section of the app and slide left on the column for the paper you want to download and it should reveal a 'Download' option as shown below.
+Click Download and it would ask you to confirm you want to 'Download this paper'.
+
+Then, you just have to click Download and it should download the pdf file and present it to you.</string>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="26"/>
+                                </variation>
+                            </textView>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ss_downloadpaper" translatesAutoresizingMaskIntoConstraints="NO" id="LQO-d7-33b">
+                                <rect key="frame" x="16" y="325" width="382" height="369"/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steps to use the Downloading feature" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GB7-da-Fbq">
+                                <rect key="frame" x="16" y="10" width="382" height="25"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="29"/>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.60784313725490191" green="0.87058823529411766" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="CRU-hz-aJG" firstAttribute="trailing" secondItem="LQO-d7-33b" secondAttribute="trailing" constant="16" id="5ey-9E-Fsm"/>
+                            <constraint firstItem="3cx-1u-wwI" firstAttribute="top" secondItem="GB7-da-Fbq" secondAttribute="bottom" constant="19" id="9vp-5r-Fwd"/>
+                            <constraint firstItem="GB7-da-Fbq" firstAttribute="leading" secondItem="CRU-hz-aJG" secondAttribute="leading" constant="16" id="NPl-yK-YXY"/>
+                            <constraint firstItem="LQO-d7-33b" firstAttribute="top" secondItem="CRU-hz-aJG" secondAttribute="top" constant="325" id="SY3-Pa-7Fd"/>
+                            <constraint firstItem="CRU-hz-aJG" firstAttribute="trailing" secondItem="GB7-da-Fbq" secondAttribute="trailing" constant="16" id="UXh-hE-PQL"/>
+                            <constraint firstItem="GB7-da-Fbq" firstAttribute="top" secondItem="CRU-hz-aJG" secondAttribute="top" constant="10" id="cWM-OI-zTe"/>
+                            <constraint firstItem="3cx-1u-wwI" firstAttribute="leading" secondItem="CRU-hz-aJG" secondAttribute="leading" id="eD2-AE-8fp"/>
+                            <constraint firstItem="CRU-hz-aJG" firstAttribute="bottom" secondItem="LQO-d7-33b" secondAttribute="bottom" constant="42" id="fvD-i3-gT6"/>
+                            <constraint firstItem="3cx-1u-wwI" firstAttribute="trailing" secondItem="CRU-hz-aJG" secondAttribute="trailing" id="g3x-mz-XHL"/>
+                            <constraint firstItem="LQO-d7-33b" firstAttribute="top" secondItem="3cx-1u-wwI" secondAttribute="bottom" constant="20" id="jiy-86-MPm"/>
+                            <constraint firstItem="LQO-d7-33b" firstAttribute="leading" secondItem="CRU-hz-aJG" secondAttribute="leading" constant="16" id="q3G-ah-5FY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="CRU-hz-aJG"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="LQO-d7-33b" id="X7n-dN-F5c"/>
+                        <outlet property="labelView" destination="GB7-da-Fbq" id="apG-iX-7CR"/>
+                        <outlet property="textView" destination="3cx-1u-wwI" id="Ix3-6L-k6M"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ykd-FI-Y0f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2643" y="134"/>
+        </scene>
+        <!--Fifth HelpVC-->
+        <scene sceneID="rYS-AU-4pG">
+            <objects>
+                <viewController storyboardIdentifier="sb_help5" id="nAt-Cj-ntS" customClass="FifthHelpVC" customModule="APlusPapersIB" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1Hv-pE-bgy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QvX-Oe-gcC">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="54.666666666666664"/>
+                                <string key="text">Accessing Downloaded and 
+Saved Papers</string>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="26"/>
+                                </variation>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="i7S-fU-gI4">
+                                <rect key="frame" x="16" y="62.666666666666671" width="382" height="205.33333333333331"/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">• To access all your downloaded and saved papers, click on the 'View Downloaded Papers' button.
+• It will take you to a view which lists out all your downloaded papers and you may open them by simply clicking on the intended paper.  ⇣</string>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="27"/>
+                                </variation>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="iNx-sB-duh">
+                                <rect key="frame" x="16" y="615" width="382" height="82"/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">• Alternatively,  you may also choose to save the paper in the Files app or anywhere else after you have already downloaded the paper.</string>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="26"/>
+                                </variation>
+                            </textView>
+                            <imageView multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ss_downloadedpapers" translatesAutoresizingMaskIntoConstraints="NO" id="Nsv-Vd-GZc">
+                                <rect key="frame" x="56" y="276" width="301" height="331"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.60784313725490191" green="0.87058823529411766" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="Nsv-Vd-GZc" firstAttribute="top" secondItem="N5H-Jz-xvj" secondAttribute="top" constant="276" id="05T-fa-B5n"/>
+                            <constraint firstItem="i7S-fU-gI4" firstAttribute="leading" secondItem="N5H-Jz-xvj" secondAttribute="leading" constant="16" id="Dhw-C8-CTS"/>
+                            <constraint firstItem="QvX-Oe-gcC" firstAttribute="trailing" secondItem="N5H-Jz-xvj" secondAttribute="trailing" id="Dlh-7z-DBX"/>
+                            <constraint firstItem="N5H-Jz-xvj" firstAttribute="trailing" secondItem="i7S-fU-gI4" secondAttribute="trailing" constant="16" id="KGk-FE-NF3"/>
+                            <constraint firstItem="N5H-Jz-xvj" firstAttribute="bottom" secondItem="Nsv-Vd-GZc" secondAttribute="bottom" constant="129" id="Q32-Pf-Fzw"/>
+                            <constraint firstItem="Nsv-Vd-GZc" firstAttribute="leading" secondItem="N5H-Jz-xvj" secondAttribute="leading" constant="56" id="TD4-dt-Vao"/>
+                            <constraint firstItem="QvX-Oe-gcC" firstAttribute="leading" secondItem="N5H-Jz-xvj" secondAttribute="leading" id="TD9-Jc-DN0"/>
+                            <constraint firstItem="iNx-sB-duh" firstAttribute="leading" secondItem="N5H-Jz-xvj" secondAttribute="leading" constant="16" id="WQZ-5p-NN3"/>
+                            <constraint firstItem="i7S-fU-gI4" firstAttribute="top" secondItem="QvX-Oe-gcC" secondAttribute="bottom" constant="8" id="YsZ-Wp-lvH"/>
+                            <constraint firstItem="Nsv-Vd-GZc" firstAttribute="top" secondItem="i7S-fU-gI4" secondAttribute="bottom" constant="8" id="ZOF-2P-cY8"/>
+                            <constraint firstItem="N5H-Jz-xvj" firstAttribute="trailing" secondItem="Nsv-Vd-GZc" secondAttribute="trailing" constant="57" id="i8s-aI-AKF"/>
+                            <constraint firstItem="iNx-sB-duh" firstAttribute="top" secondItem="Nsv-Vd-GZc" secondAttribute="bottom" constant="8" id="n2J-gu-VrW"/>
+                            <constraint firstItem="QvX-Oe-gcC" firstAttribute="top" secondItem="N5H-Jz-xvj" secondAttribute="top" id="oEq-yU-wBm"/>
+                            <constraint firstItem="N5H-Jz-xvj" firstAttribute="bottom" secondItem="iNx-sB-duh" secondAttribute="bottom" constant="39" id="pqd-As-C7t"/>
+                            <constraint firstItem="N5H-Jz-xvj" firstAttribute="trailing" secondItem="iNx-sB-duh" secondAttribute="trailing" constant="16" id="q9M-KO-kZK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="N5H-Jz-xvj"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="Nsv-Vd-GZc" id="han-cN-AgW"/>
+                        <outlet property="labelView" destination="QvX-Oe-gcC" id="WeC-yc-xmm"/>
+                        <outlet property="textView2" destination="iNx-sB-duh" id="Und-36-dlD"/>
+                        <outlet property="textview" destination="i7S-fU-gI4" id="cD8-ep-6Tq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Isp-5Z-Kyd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3355" y="134"/>
+        </scene>
+        <!--Sixth HelpVC-->
+        <scene sceneID="gsb-lJ-YNC">
+            <objects>
+                <viewController storyboardIdentifier="sb_help6" id="5Er-AO-iaw" customClass="SixthHelpVC" customModule="APlusPapersIB" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GQE-I8-lfS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hiZ-fw-iqC">
+                                <rect key="frame" x="16" y="0.0" width="382" height="262"/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">You can even delete papers that you do not want anymore or if you feel it is too cluttered. 
+
+All you have to do is slide left on the paper you want to delete in the 'Downloaded Papers' view and it will reveal a Delete option and clicking that will remove the paper from your archive of saved papers.</string>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="26"/>
+                                </variation>
+                            </textView>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ss_deletedownpaper" translatesAutoresizingMaskIntoConstraints="NO" id="qxV-14-sz1">
+                                <rect key="frame" x="73" y="284" width="265" height="354"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="THANK YOU FOR GETTING THE PAPER DOWNLOADER FEATURE! ENJOY :)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bO3-Fv-Mpx">
+                                <rect key="frame" x="16" y="661" width="382" height="38.666666666666629"/>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="21"/>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.60784313725490191" green="0.87058823529411766" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="bO3-Fv-Mpx" firstAttribute="leading" secondItem="Spf-qr-hi4" secondAttribute="leading" constant="16" id="1at-Uj-TEW"/>
+                            <constraint firstItem="Spf-qr-hi4" firstAttribute="bottom" secondItem="bO3-Fv-Mpx" secondAttribute="bottom" constant="36.5" id="6yu-wh-9Gv"/>
+                            <constraint firstItem="bO3-Fv-Mpx" firstAttribute="top" secondItem="qxV-14-sz1" secondAttribute="bottom" constant="23" id="9MC-oo-IZq"/>
+                            <constraint firstItem="hiZ-fw-iqC" firstAttribute="top" secondItem="Spf-qr-hi4" secondAttribute="top" id="Le6-Ht-Twk"/>
+                            <constraint firstItem="qxV-14-sz1" firstAttribute="top" secondItem="hiZ-fw-iqC" secondAttribute="bottom" constant="22" id="MEL-1w-ATr"/>
+                            <constraint firstItem="Spf-qr-hi4" firstAttribute="bottom" secondItem="qxV-14-sz1" secondAttribute="bottom" constant="98" id="MfJ-UT-pOD"/>
+                            <constraint firstItem="Spf-qr-hi4" firstAttribute="trailing" secondItem="bO3-Fv-Mpx" secondAttribute="trailing" constant="16" id="PJd-nS-GSU"/>
+                            <constraint firstItem="qxV-14-sz1" firstAttribute="leading" secondItem="Spf-qr-hi4" secondAttribute="leading" constant="73" id="TCD-1Z-Q82"/>
+                            <constraint firstItem="Spf-qr-hi4" firstAttribute="trailing" secondItem="qxV-14-sz1" secondAttribute="trailing" constant="76" id="TDJ-ZG-PJc"/>
+                            <constraint firstItem="qxV-14-sz1" firstAttribute="top" secondItem="Spf-qr-hi4" secondAttribute="top" constant="284" id="Yvi-hx-rhg"/>
+                            <constraint firstItem="hiZ-fw-iqC" firstAttribute="leading" secondItem="Spf-qr-hi4" secondAttribute="leading" constant="16" id="gcT-3L-Uaw"/>
+                            <constraint firstItem="Spf-qr-hi4" firstAttribute="trailing" secondItem="hiZ-fw-iqC" secondAttribute="trailing" constant="16" id="kvA-KZ-DVV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Spf-qr-hi4"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="qxV-14-sz1" id="LxU-mh-45y"/>
+                        <outlet property="labelView" destination="bO3-Fv-Mpx" id="5ke-XE-Mx1"/>
+                        <outlet property="textView" destination="hiZ-fw-iqC" id="Wo7-XJ-Jb6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EvD-Mb-ied" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4099" y="134"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="airprint_ss" width="414" height="736"/>
+        <image name="airprint_ss2" width="414" height="736"/>
+        <image name="annie-spratt-695497-unsplash" width="4886" height="6392"/>
+        <image name="ss_deletedownpaper" width="1242" height="2688"/>
+        <image name="ss_downloadedpapers" width="1242" height="2688"/>
+        <image name="ss_downloadpaper" width="1242" height="2688"/>
+    </resources>
+</document>
