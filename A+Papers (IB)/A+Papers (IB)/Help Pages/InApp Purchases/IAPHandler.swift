@@ -117,7 +117,7 @@ extension IAPHandler: SKProductsRequestDelegate, SKPaymentTransactionObserver{
                     SKPaymentQueue.default().finishTransaction(transaction as! SKPaymentTransaction)
                     UserDefaults.standard.set(true, forKey: "iapPurchased")
                     if let itemsObject = UserDefaults.standard.object(forKey: "iapPurchased") {
-                        print(itemsObject as! Bool)
+                        print(itemsObject as? Bool ?? false)
                     }
                     UserDefaults.standard.object(forKey: "restoredPurchasesBool")
                     UserDefaults.standard.set(true, forKey: "restoredPurchasesBool")

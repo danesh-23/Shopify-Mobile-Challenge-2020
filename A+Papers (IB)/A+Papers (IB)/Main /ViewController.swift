@@ -53,15 +53,9 @@ class ViewController: UIViewController {
         SCNetworkReachabilityGetFlags(self.reachability!, &flags)
         
         if (isNetworkReachable(with: flags)) {
-            //            print(flags)
-            if flags.contains(.isWWAN) {
-                //                print("via mobile")
-            }
-            //            print("via wifi")
             return true
         } else if (!isNetworkReachable(with: flags)) {
             SCLAlertView().showError("No Active Internet Connection", subTitle: "Your internet connection appears to be offline. Please connect to a valid Wifi or mobile network to continue.")
-            //            print(flags)
             return false
         }
         return true
@@ -77,10 +71,11 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         networkAvailable = checkReachability()
+        self.navigationController?.navigationBar.topItem?.title = NSLocalizedString("A+Papers", comment: "")
     }
     
     @IBAction func downloadedPapers(_ sender: Any) {
-        if UserDefaults.standard.object(forKey: "iapPurchased") != nil {
+        if true {
             self.performSegue(withIdentifier: "seguetodownloaded", sender: self)
         } else {
             let alert = SCLAlertView()
@@ -93,7 +88,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        print(String(UIDevice.current.identifierForVendor!.uuidString))
         hiddenErrorMessage.text = NSLocalizedString("Done loading subjects. Click again :)", comment: "")
         hiddenErrorMessage.isHidden = true
         isAppAlreadyLaunchedOnce()
@@ -121,7 +115,6 @@ class ViewController: UIViewController {
                 for var values in self.titleNames {
                     values.removeSubrange(values.startIndex..<values.index(values.startIndex, offsetBy: 4))
                     self.groupNames.append(values)
-    //                print(values)
                 }
             }
         }
@@ -141,18 +134,15 @@ class ViewController: UIViewController {
     }
     
     func isAppAlreadyLaunchedOnce() {
-        let defaults = UserDefaults.standard.object(forKey: "firsttimeuserspopup")
-        if defaults as? Bool == true {
-            print("")
-        } else {
-            UserDefaults.standard.set(true, forKey: "firsttimeuserspopup")
-            //print("App launched first time")
+        let defaults = UserDefaults.standard.object(forKey: "papersaverfirsttime")
+        if defaults as? Bool != true {
+            UserDefaults.standard.set(true, forKey: "papersaverfirsttime")
             let viewController = UIStoryboard(name: "FirstTime", bundle: nil).instantiateInitialViewController()
             if let navigator = navigationController {
                 navigator.pushViewController(viewController!, animated: true)
             }
         }
-//        UserDefaults.standard.set(false, forKey: "firsttimeuserspopup")
+        UserDefaults.standard.set(false, forKey: "firsttimeuserspopup")
     }
 }
 extension UIViewController {

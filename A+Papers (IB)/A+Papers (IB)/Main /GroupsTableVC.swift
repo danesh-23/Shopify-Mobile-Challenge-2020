@@ -18,7 +18,6 @@ class GroupsTableVC: UITableViewController {
         super.viewDidLoad()
 //        print(names)
         for values in passedOnNames {
-//            print(values)
             titleName.append(removeGibberish(dirtyText: ((values.components(separatedBy: "<strong>")[1]).replacingOccurrences(of: "<span>", with: "")).components(separatedBy: "</strong>")[0]).replacingOccurrences(of: "Langauage", with: "Language"))
         }
     }

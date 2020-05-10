@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Help PagesVC-->
+        <!--Help-->
         <scene sceneID="Dbm-Zj-TID">
             <objects>
-                <pageViewController storyboardIdentifier="pageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="XLa-l2-aBc" customClass="HelpPagesVC" customModule="APlusPapersIB" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="pageViewController" autoresizesArchivedViewToFullSize="NO" title="Help" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="XLa-l2-aBc" customClass="HelpPagesVC" customModule="APlusPapersIB" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="77B-2N-rDm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-255" y="134"/>
@@ -272,7 +272,7 @@ It would connect wirelessly to any surrounding printers that support AirPrint, w
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="BLy-4p-hso">
                                 <rect key="frame" x="16" y="87" width="382" height="539"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <mutableString key="text">Why people were demanding for this feature:
+                                <string key="text">Why people were demanding for this feature:
 
 • Allows users to download and save any papers.
 
@@ -286,7 +286,7 @@ ALL of these features provided for the second lowest possible price on the App S
 
 Click below to get a bargain of a lifetime.
 
-Swipe down to close.</mutableString>
+Swipe down to close.</string>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <variation key="heightClass=regular-widthClass=regular">
@@ -336,7 +336,7 @@ Swipe down to close.</mutableString>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oEd-qv-fx7"/>
                     </view>
-                    <navigationItem key="navigationItem" id="j94-23-d3p"/>
+                    <navigationItem key="navigationItem" title="Get PaperSaver" id="j94-23-d3p"/>
                     <connections>
                         <outlet property="getiapbuttonView" destination="j1V-dv-R9g" id="B9K-ze-GJu"/>
                         <outlet property="labelView" destination="q1Q-ek-244" id="9rS-B0-OVe"/>

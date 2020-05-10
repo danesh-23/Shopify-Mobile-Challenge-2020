@@ -76,8 +76,6 @@ class PapersTableVC: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         pdfLink = passedOnLink + paperLinks[indexPath.row]
         paperName = paperLinks[indexPath.row].capitalized
-        print(pdfLink)
-        print(getDownloadedFileName(string: pdfLink))
         self.performSegue(withIdentifier: "seguetowebview", sender: self)
     }
     

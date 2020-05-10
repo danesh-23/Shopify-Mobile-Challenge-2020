@@ -51,8 +51,7 @@ class DownloadedFilesTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        documentInteractionController.dismissPreview(animated: true)
-        print(savedFiles[indexPath.row])
+        documentInteractionController.dismissPreview(animated: true)
         self.share(url: savedFiles[indexPath.row])
     }
 

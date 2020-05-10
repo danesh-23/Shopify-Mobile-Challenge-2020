@@ -17,8 +17,7 @@ class FirstTimePopupVC: UIPageViewController, UIPageViewControllerDelegate, UIPa
     }
         
     lazy var orderedViewControllers: [UIViewController] = {
-        return [self.newVc(viewController: "sb_firsttime1"), self.newVc(viewController:"sb_firsttime2")]
-//            , self.newVc(viewController: "sb_help4")]
+        return [self.newVc(viewController: "sb_firsttime3"), self.newVc(viewController: "sb_firsttime1"), self.newVc(viewController:"sb_firsttime2")]
     }()
         
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
