@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A190C02246823F400D638BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A190C01246823F300D638BF /* SceneDelegate.swift */; };
 		1A7F5EE123B9519B00B8FC78 /* PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7F5EE023B9519B00B8FC78 /* PDFViewController.swift */; };
 		1A7F5F4F23C32DB800B8FC78 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7F5F4E23C32DB600B8FC78 /* WebKit.framework */; };
 		1A83146E23E55AA900990428 /* FirstTime.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A83146D23E55AA900990428 /* FirstTime.storyboard */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A190C01246823F300D638BF /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1A7F5EE023B9519B00B8FC78 /* PDFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewController.swift; sourceTree = "<group>"; };
 		1A7F5F4E23C32DB600B8FC78 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		1A83146D23E55AA900990428 /* FirstTime.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FirstTime.storyboard; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				1AB3F33F239DC88D0099E495 /* AppDelegate.swift */,
+				1A190C01246823F300D638BF /* SceneDelegate.swift */,
 				1A43133224614B2000CBA06D /* Main  */,
 				1A83147523E561A200990428 /* Help Pages */,
 				1A83147623E561E700990428 /* First Time Popup */,
@@ -311,6 +314,7 @@
 				1AB8791423D4EFF0008533F0 /* FourthHelpVC.swift in Sources */,
 				1AB3F35A23A0E1F20099E495 /* PapersTableVC.swift in Sources */,
 				1A7F5EE123B9519B00B8FC78 /* PDFViewController.swift in Sources */,
+				1A190C02246823F400D638BF /* SceneDelegate.swift in Sources */,
 				1A83147A23E563F700990428 /* FirstTimeVC2.swift in Sources */,
 				1AB89EEB2425D66C002EA8F6 /* DownloadedFilesTableViewController.swift in Sources */,
 				1AB3F35823A0E1DB0099E495 /* YearsTableVC.swift in Sources */,

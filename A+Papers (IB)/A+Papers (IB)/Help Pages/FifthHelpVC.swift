@@ -19,7 +19,9 @@ class FifthHelpVC: UIViewController, UIGestureRecognizerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        labelView.text = NSLocalizedString("Accessing Downloaded and Saved Papers", comment: "")
+        let attributedString = NSMutableAttributedString(string: NSLocalizedString("Accessing Downloaded and Saved Papers", comment: ""))
+        attributedString.addAttribute(NSAttributedString.Key.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: NSRange(location: 0, length: attributedString.length))
+        labelView.attributedText = attributedString
         textview.text = NSLocalizedString("• To access all your downloaded and saved papers, click on the 'Downloaded Papers' button.\n• It will take you to a view which lists out all your downloaded papers and you may open them by simply clicking on the intended paper.  ⇣", comment: "")
         textView2.text = NSLocalizedString("• Alternatively,  you may also choose to save the paper in the Files app or anywhere else after you have already downloaded the paper.", comment: "")
         let pinch = UIPinchGestureRecognizer(target: self, action: #selector(self.pinch(sender:)))

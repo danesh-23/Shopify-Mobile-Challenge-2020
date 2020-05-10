@@ -21,8 +21,6 @@ class GroupsTableVC: UITableViewController {
 //            print(values)
             titleName.append(removeGibberish(dirtyText: ((values.components(separatedBy: "<strong>")[1]).replacingOccurrences(of: "<span>", with: "")).components(separatedBy: "</strong>")[0]).replacingOccurrences(of: "Langauage", with: "Language"))
         }
-//        print(titleName)
-//        print(links)
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

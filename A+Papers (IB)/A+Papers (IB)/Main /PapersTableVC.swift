@@ -51,8 +51,6 @@ class PapersTableVC: UITableViewController {
                     finalPapers.append(values)
                 }
             }
-//            print(self.passedOnLink)
-//            print(finalPapers)
             DispatchQueue.main.async {
                 self.paperLinks = finalPapers
                 self.tableView.reloadData()

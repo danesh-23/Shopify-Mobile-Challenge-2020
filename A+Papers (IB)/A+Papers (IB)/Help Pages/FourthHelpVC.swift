@@ -19,7 +19,9 @@ class FourthHelpVC: UIViewController, UIGestureRecognizerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        labelView.text = NSLocalizedString("Steps to use the Downloading feature", comment: "")
+        let attributedString = NSMutableAttributedString(string: NSLocalizedString("Steps to use the Downloading feature", comment: ""))
+        attributedString.addAttribute(NSAttributedString.Key.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: NSRange(location: 0, length: attributedString.length))
+        labelView.attributedText = attributedString
         textView.text = NSLocalizedString("Navigate to the 'Papers' section of the app and slide left on the column for the paper you want to download and it should reveal a 'Download' option as shown below.\nClick Download and it would ask you to confirm you want to 'Download this paper'.\n\nThen, you just have to click Download and it should download the pdf file and present it to you.", comment: "")
         let pinch = UIPinchGestureRecognizer(target: self, action: #selector(self.pinch(sender:)))
         self.imageView.addGestureRecognizer(pinch)
