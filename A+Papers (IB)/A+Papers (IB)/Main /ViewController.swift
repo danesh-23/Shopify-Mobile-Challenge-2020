@@ -75,7 +75,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func downloadedPapers(_ sender: Any) {
-        if true {
+        if UserDefaults.standard.object(forKey: "iapPurchased") as? Bool == true {
             self.performSegue(withIdentifier: "seguetodownloaded", sender: self)
         } else {
             let alert = SCLAlertView()
