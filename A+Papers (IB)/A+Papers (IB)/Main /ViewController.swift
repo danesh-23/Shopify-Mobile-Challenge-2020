@@ -12,27 +12,6 @@ import SystemConfiguration
 import SCLAlertView
 
 class ViewController: UIViewController {
-
-    @IBAction func seeibgroups(_ sender: Any) {
-        guard checkReachability() else {
-            networkAvailable = false
-            SCLAlertView().showError(NSLocalizedString("You are not connected to the internet.", comment: ""), subTitle: NSLocalizedString("You need an internet connection to browse through our papers.", comment: ""))
-            return
-        }
-        if groupNames.count < 3 {
-            hiddenErrorMessage.isHidden = false
-        } else {
-            self.performSegue(withIdentifier: "seguetogroups", sender: self)
-            hiddenErrorMessage.isHidden = true
-        }
-    }
-    
-    @IBAction func helpPageBtn(_ sender: Any) {
-        let viewController = UIStoryboard(name: "Help", bundle: nil).instantiateViewController(withIdentifier: "pageViewController")
-        if let navigator = navigationController {
-            navigator.pushViewController(viewController, animated: true)
-        }
-    }
     
     @IBOutlet weak var titleText: UILabel!
     @IBOutlet weak var mainText: UITextView!
@@ -40,7 +19,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var seeibgroupsbtn: UIButton!
     @IBOutlet weak var helpPagesBtn: UIButton!
-    var titleNames = [String]()
+    var subjectGroups = [String: [String]]()
     var groupNames = [String]()
     var links = [String]()
     let imageArray = ["image1.jpg", "image2.jpg", "image3.jpg", "image4.jpg", "image5.jpg"]
@@ -74,6 +53,27 @@ class ViewController: UIViewController {
         self.navigationController?.navigationBar.topItem?.title = NSLocalizedString("A+Papers", comment: "")
     }
     
+    @IBAction func seeibgroups(_ sender: Any) {
+        guard checkReachability() else {
+            networkAvailable = false
+            SCLAlertView().showError(NSLocalizedString("You are not connected to the internet.", comment: ""), subTitle: NSLocalizedString("You need an internet connection to browse through our papers.", comment: ""))
+            return
+        }
+        if subjectGroups.count < 3 {
+            hiddenErrorMessage.isHidden = false
+        } else {
+            self.performSegue(withIdentifier: "seguetogroups", sender: self)
+            hiddenErrorMessage.isHidden = true
+        }
+    }
+    
+    @IBAction func helpPageBtn(_ sender: Any) {
+        let viewController = UIStoryboard(name: "Help", bundle: nil).instantiateViewController(withIdentifier: "pageViewController")
+        if let navigator = navigationController {
+            navigator.pushViewController(viewController, animated: true)
+        }
+    }
+    
     @IBAction func downloadedPapers(_ sender: Any) {
         if UserDefaults.standard.object(forKey: "iapPurchased") as? Bool == true {
             self.performSegue(withIdentifier: "seguetodownloaded", sender: self)
@@ -88,7 +88,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        hiddenErrorMessage.text = NSLocalizedString("Done loading subjects. Click again :)", comment: "")
+        hiddenErrorMessage.text = NSLocalizedString("Loading subjects... Try again :)", comment: "")
         hiddenErrorMessage.isHidden = true
         isAppAlreadyLaunchedOnce()
         networkAvailable = checkReachability()
@@ -96,25 +96,26 @@ class ViewController: UIViewController {
         mainText.text = NSLocalizedString("Welcome to A+Papers. We offer resources for IB students doing the International Baccalaureate programme.\n\nWe cater specifically as a one-stop-all for you to find any past exam paper for revision that you could possibly want.", comment: "")
         seeibgroupsbtn.setTitle(NSLocalizedString("See IB Papers", comment: ""), for: .normal)
         helpPagesBtn.setTitle(NSLocalizedString("Help", comment: ""), for: .normal)
-        
-        var names = [String]()
+
         imageView.image = randomImageGenerator()
         if networkAvailable {
-            Alamofire.request("https://ibresources.org/ib-past-papers/").responseString {response in
-                for values in response.description.components(separatedBy: "et_pb_text_inner") {
-                    if values.contains("Group") {
-                        names.append(values)
+            if let filePath = Bundle.main.path(forResource: "papers", ofType: "txt") {
+                do {
+                    let content = try String(contentsOfFile: filePath)
+    //                print(content)
+                    var count = 0
+                    let array = content.components(separatedBy: ",")
+                    while count < array.count {
+                        let key = array[count+1].replacingOccurrences(of: "\n", with: "")
+                        if subjectGroups[key] == nil {
+                            subjectGroups[key] = [array[count].replacingOccurrences(of: "\n", with: "")]
+                        } else {
+                            subjectGroups[key]?.append(array[count].replacingOccurrences(of: "\n", with: ""))
+                        }
+                        count += 2
                     }
-                }
-
-                for values in names {
-                    self.titleNames.append(values.components(separatedBy: "</span>")[0].components(separatedBy: "\">")[1])
-                    self.links.append(values.components(separatedBy: "href=")[1].components(separatedBy: "\"")[1])
-                }
-                
-                for var values in self.titleNames {
-                    values.removeSubrange(values.startIndex..<values.index(values.startIndex, offsetBy: 4))
-                    self.groupNames.append(values)
+                } catch {
+                    print("couldnt get contents")
                 }
             }
         }
@@ -123,8 +124,7 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "seguetogroups" {
             let nextView = segue.destination as! GroupsTableVC
-            nextView.passedOnNames = groupNames
-            nextView.passedOnLinks = links
+            nextView.passedOnNames = subjectGroups
         }
     }
     
@@ -144,7 +144,29 @@ class ViewController: UIViewController {
         }
         UserDefaults.standard.set(false, forKey: "firsttimeuserspopup")
     }
+    
+    func GetNamesAndLinks(string: String) {
+        var names = [String]()
+        var titleNames = [String]()
+        
+        for values in string.components(separatedBy: "et_pb_text_inner") {
+            if values.contains("Group") {
+                names.append(values)
+            }
+        }
+
+        for values in names {
+            titleNames.append(values.components(separatedBy: "</span>")[0].components(separatedBy: "\">")[1])
+            self.links.append(values.components(separatedBy: "href=")[1].components(separatedBy: "\"")[1])
+        }
+
+        for var values in titleNames {
+            values.removeSubrange(values.startIndex..<values.index(values.startIndex, offsetBy: 4))
+            self.groupNames.append(values)
+        }
+    }
 }
+
 extension UIViewController {
     func pushViewsFromNavButtons(storyboardName: String, vcIdentifier: String){
         let viewController = UIStoryboard(name: storyboardName, bundle: nil).instantiateViewController(withIdentifier: vcIdentifier)

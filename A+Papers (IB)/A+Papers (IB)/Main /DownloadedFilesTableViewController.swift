@@ -53,6 +53,7 @@ class DownloadedFilesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         documentInteractionController.dismissPreview(animated: true)
         self.share(url: savedFiles[indexPath.row])
+        print(savedFiles[indexPath.row])
     }
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {

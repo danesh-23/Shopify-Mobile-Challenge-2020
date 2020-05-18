@@ -35,10 +35,14 @@
 		1AB89EE724258669002EA8F6 /* FirstTimeVC3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB89EE624258669002EA8F6 /* FirstTimeVC3.swift */; };
 		1AB89EE924258A75002EA8F6 /* SixthHelpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB89EE824258A75002EA8F6 /* SixthHelpVC.swift */; };
 		1AB89EEB2425D66C002EA8F6 /* DownloadedFilesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB89EEA2425D66C002EA8F6 /* DownloadedFilesTableViewController.swift */; };
-		8DDF7CB7B1BEAEBC6FB517C2 /* Pods_A_Papers__IB_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 710BC741B0EEE834755EF049 /* Pods_A_Papers__IB_.framework */; };
+		1ABE44202472687C00651F9C /* papers.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1ABE441F2472687C00651F9C /* papers.txt */; };
+		1ABE442424726B9B00651F9C /* LevelTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABE442324726B9B00651F9C /* LevelTableVC.swift */; };
+		1ABE442624726C5800651F9C /* VariantsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABE442524726C5800651F9C /* VariantsTableVC.swift */; };
+		8E98E8B2B651FA460F48BEEF /* Pods_A_Papers__IB_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAF7A5B4EC32E6A959376BA8 /* Pods_A_Papers__IB_.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		17094FEC399602507C3D3A25 /* Pods-APlusPapersIBTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APlusPapersIBTests.release.xcconfig"; path = "Target Support Files/Pods-APlusPapersIBTests/Pods-APlusPapersIBTests.release.xcconfig"; sourceTree = "<group>"; };
 		1A190C01246823F300D638BF /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1A7F5EE023B9519B00B8FC78 /* PDFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewController.swift; sourceTree = "<group>"; };
 		1A7F5F4E23C32DB600B8FC78 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
@@ -69,9 +73,14 @@
 		1AB89EE624258669002EA8F6 /* FirstTimeVC3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTimeVC3.swift; sourceTree = "<group>"; };
 		1AB89EE824258A75002EA8F6 /* SixthHelpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SixthHelpVC.swift; sourceTree = "<group>"; };
 		1AB89EEA2425D66C002EA8F6 /* DownloadedFilesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadedFilesTableViewController.swift; sourceTree = "<group>"; };
-		710BC741B0EEE834755EF049 /* Pods_A_Papers__IB_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_A_Papers__IB_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B387303B3A30F663A710CB7A /* Pods-A+Papers (IB).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-A+Papers (IB).debug.xcconfig"; path = "Target Support Files/Pods-A+Papers (IB)/Pods-A+Papers (IB).debug.xcconfig"; sourceTree = "<group>"; };
-		E238F4279B901EC913EF1525 /* Pods-A+Papers (IB).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-A+Papers (IB).release.xcconfig"; path = "Target Support Files/Pods-A+Papers (IB)/Pods-A+Papers (IB).release.xcconfig"; sourceTree = "<group>"; };
+		1ABE441F2472687C00651F9C /* papers.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = papers.txt; sourceTree = "<group>"; };
+		1ABE442324726B9B00651F9C /* LevelTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelTableVC.swift; sourceTree = "<group>"; };
+		1ABE442524726C5800651F9C /* VariantsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariantsTableVC.swift; sourceTree = "<group>"; };
+		4BAF7DED54956AD4FADC132E /* Pods-A+Papers (IB).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-A+Papers (IB).release.xcconfig"; path = "Target Support Files/Pods-A+Papers (IB)/Pods-A+Papers (IB).release.xcconfig"; sourceTree = "<group>"; };
+		6B897C2E67BBC6D253A3DACF /* Pods-A+Papers (IB).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-A+Papers (IB).debug.xcconfig"; path = "Target Support Files/Pods-A+Papers (IB)/Pods-A+Papers (IB).debug.xcconfig"; sourceTree = "<group>"; };
+		996A887718DA382423BB61C0 /* Pods-APlusPapersIBTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APlusPapersIBTests.debug.xcconfig"; path = "Target Support Files/Pods-APlusPapersIBTests/Pods-APlusPapersIBTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AAF7A5B4EC32E6A959376BA8 /* Pods_A_Papers__IB_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_A_Papers__IB_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFFF6C8F10A9A0A6128FC357 /* libPods-APlusPapersIBTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-APlusPapersIBTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +89,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A7F5F4F23C32DB800B8FC78 /* WebKit.framework in Frameworks */,
-				8DDF7CB7B1BEAEBC6FB517C2 /* Pods_A_Papers__IB_.framework in Frameworks */,
+				8E98E8B2B651FA460F48BEEF /* Pods_A_Papers__IB_.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,9 +104,12 @@
 				1AB89EEA2425D66C002EA8F6 /* DownloadedFilesTableViewController.swift */,
 				1AB3F353239E1AFF0099E495 /* GroupsTableVC.swift */,
 				1AB3F355239F8DD80099E495 /* SubjectsTableVC.swift */,
+				1ABE442524726C5800651F9C /* VariantsTableVC.swift */,
+				1ABE442324726B9B00651F9C /* LevelTableVC.swift */,
 				1AB3F35723A0E1DB0099E495 /* YearsTableVC.swift */,
 				1AB3F35923A0E1F20099E495 /* PapersTableVC.swift */,
 				1A7F5EE023B9519B00B8FC78 /* PDFViewController.swift */,
+				1ABE441F2472687C00651F9C /* papers.txt */,
 			);
 			path = "Main ";
 			sourceTree = "<group>";
@@ -176,7 +188,8 @@
 			isa = PBXGroup;
 			children = (
 				1A7F5F4E23C32DB600B8FC78 /* WebKit.framework */,
-				710BC741B0EEE834755EF049 /* Pods_A_Papers__IB_.framework */,
+				AAF7A5B4EC32E6A959376BA8 /* Pods_A_Papers__IB_.framework */,
+				CFFF6C8F10A9A0A6128FC357 /* libPods-APlusPapersIBTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -184,8 +197,10 @@
 		BA261127D996B6AC6D273C26 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B387303B3A30F663A710CB7A /* Pods-A+Papers (IB).debug.xcconfig */,
-				E238F4279B901EC913EF1525 /* Pods-A+Papers (IB).release.xcconfig */,
+				6B897C2E67BBC6D253A3DACF /* Pods-A+Papers (IB).debug.xcconfig */,
+				4BAF7DED54956AD4FADC132E /* Pods-A+Papers (IB).release.xcconfig */,
+				996A887718DA382423BB61C0 /* Pods-APlusPapersIBTests.debug.xcconfig */,
+				17094FEC399602507C3D3A25 /* Pods-APlusPapersIBTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -197,11 +212,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1AB3F350239DC8910099E495 /* Build configuration list for PBXNativeTarget "A+Papers (IB)" */;
 			buildPhases = (
-				ABA6251D712ADE0128154705 /* [CP] Check Pods Manifest.lock */,
+				39CD5731D18E08F8AAB56829 /* [CP] Check Pods Manifest.lock */,
 				1AB3F338239DC88D0099E495 /* Sources */,
 				1AB3F339239DC88D0099E495 /* Frameworks */,
 				1AB3F33A239DC88D0099E495 /* Resources */,
-				9A04C3D33F657A141E5E2072 /* [CP] Embed Pods Frameworks */,
+				1373D3D2442D512AAD89C000 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -218,7 +233,7 @@
 		1AB3F334239DC88D0099E495 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1120;
+				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = "Danesh Rajasolan";
 				TargetAttributes = {
@@ -253,6 +268,7 @@
 				1A83146E23E55AA900990428 /* FirstTime.storyboard in Resources */,
 				1AB3F34C239DC8910099E495 /* LaunchScreen.storyboard in Resources */,
 				1AB3F349239DC8910099E495 /* Assets.xcassets in Resources */,
+				1ABE44202472687C00651F9C /* papers.txt in Resources */,
 				1AB3F347239DC88D0099E495 /* Main.storyboard in Resources */,
 				1AB8791023D4E8A4008533F0 /* Help.storyboard in Resources */,
 			);
@@ -261,7 +277,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		9A04C3D33F657A141E5E2072 /* [CP] Embed Pods Frameworks */ = {
+		1373D3D2442D512AAD89C000 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -278,7 +294,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-A+Papers (IB)/Pods-A+Papers (IB)-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		ABA6251D712ADE0128154705 /* [CP] Check Pods Manifest.lock */ = {
+		39CD5731D18E08F8AAB56829 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -316,10 +332,12 @@
 				1A7F5EE123B9519B00B8FC78 /* PDFViewController.swift in Sources */,
 				1A190C02246823F400D638BF /* SceneDelegate.swift in Sources */,
 				1A83147A23E563F700990428 /* FirstTimeVC2.swift in Sources */,
+				1ABE442624726C5800651F9C /* VariantsTableVC.swift in Sources */,
 				1AB89EEB2425D66C002EA8F6 /* DownloadedFilesTableViewController.swift in Sources */,
 				1AB3F35823A0E1DB0099E495 /* YearsTableVC.swift in Sources */,
 				1A83147023E55EEC00990428 /* FirstTimePopupVC.swift in Sources */,
 				1AB89EE924258A75002EA8F6 /* SixthHelpVC.swift in Sources */,
+				1ABE442424726B9B00651F9C /* LevelTableVC.swift in Sources */,
 				1AB89EE52425821E002EA8F6 /* IAPHandler.swift in Sources */,
 				1AB3F340239DC88D0099E495 /* AppDelegate.swift in Sources */,
 				1AB8791623D4F00C008533F0 /* FifthHelpVC.swift in Sources */,
@@ -470,7 +488,7 @@
 		};
 		1AB3F351239DC8910099E495 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B387303B3A30F663A710CB7A /* Pods-A+Papers (IB).debug.xcconfig */;
+			baseConfigurationReference = 6B897C2E67BBC6D253A3DACF /* Pods-A+Papers (IB).debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -490,7 +508,7 @@
 		};
 		1AB3F352239DC8910099E495 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E238F4279B901EC913EF1525 /* Pods-A+Papers (IB).release.xcconfig */;
+			baseConfigurationReference = 4BAF7DED54956AD4FADC132E /* Pods-A+Papers (IB).release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

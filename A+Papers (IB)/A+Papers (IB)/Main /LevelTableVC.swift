@@ -1,18 +1,18 @@
 //
-//  YearsTableVC.swift
+//  LevelTableVC.swift
 //  A+Papers (IB)
 //
-//  Created by Danesh Rajasolan on 2019-12-11.
-//  Copyright © 2019 Danesh Rajasolan. All rights reserved.
+//  Created by Danesh Rajasolan on 2020-05-18.
+//  Copyright © 2020 Danesh Rajasolan. All rights reserved.
 //
 
 import UIKit
 import Alamofire
 
-class YearsTableVC: UITableViewController {
-
+class LevelTableVC: UITableViewController {
+    
     var passedOnLink = String()
-    var finalYears = [String]()
+    var levels = [String]()
     var nextPassLink = String()
     
     override func viewDidLoad() {
@@ -20,8 +20,10 @@ class YearsTableVC: UITableViewController {
         print(passedOnLink)
         Alamofire.request(passedOnLink).responseString { response in
             for values in response.description.components(separatedBy: "td>") {
-                if values.contains("href") && (values.contains("May") || values.contains("Nov")) {
-                    self.finalYears.append(values.components(separatedBy: "\"")[1])
+                if values.contains("href") {
+                    if values.contains("Standard") || values.contains("Higher") {
+                        self.levels.append(values.components(separatedBy: "\"")[1])
+                    }
                 }
             }
             DispatchQueue.main.async {
@@ -31,23 +33,24 @@ class YearsTableVC: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return finalYears.count
+        return levels.count
     }
+
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = removeGibberish(dirtyText: finalYears[indexPath.row])
+        cell.textLabel?.text = removeGibberish(dirtyText: levels[indexPath.row])
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        nextPassLink = passedOnLink + finalYears[indexPath.row]
-        self.performSegue(withIdentifier: "seguetopapers", sender: self)
+        nextPassLink = passedOnLink + levels[indexPath.row]
+        self.performSegue(withIdentifier: "segueleveltoyears", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "seguetopapers" {
-            let nextView = segue.destination as! PapersTableVC
+        if segue.identifier == "segueleveltoyears" {
+            let nextView = segue.destination as! YearsTableVC
             nextView.passedOnLink = nextPassLink
         }
     }

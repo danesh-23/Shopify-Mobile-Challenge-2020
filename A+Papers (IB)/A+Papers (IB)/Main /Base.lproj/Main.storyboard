@@ -193,44 +193,12 @@ We cater specifically as a one-stop-all for you to find any past exam paper for 
                     </tableView>
                     <navigationItem key="navigationItem" title="Subjects" id="n4i-ic-MQt"/>
                     <connections>
-                        <segue destination="UNu-0W-sKC" kind="show" identifier="seguetoyears" id="CcQ-cL-wUO"/>
+                        <segue destination="hPq-Sj-1F7" kind="show" identifier="seguetovariant" id="eH1-nx-bgv"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yq2-vz-UuB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2239.130434782609" y="142.66304347826087"/>
-        </scene>
-        <!--Papers-->
-        <scene sceneID="nOx-tk-g5q">
-            <objects>
-                <tableViewController id="cfL-wd-CMn" customClass="PapersTableVC" customModule="APlusPapersIB" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="3dJ-gV-fQp">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="ssb-Ub-9Qb">
-                                <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ssb-Ub-9Qb" id="g0e-bC-kzI">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="cfL-wd-CMn" id="dwD-JY-fWP"/>
-                            <outlet property="delegate" destination="cfL-wd-CMn" id="zZw-bc-yj9"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Papers" id="nXU-Yw-Rie"/>
-                    <connections>
-                        <segue destination="50K-f7-e5d" kind="show" identifier="seguetowebview" id="ost-rZ-gcK"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="A85-NR-mju" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3802.898550724638" y="142.66304347826087"/>
         </scene>
         <!--PDF Paper-->
         <scene sceneID="hvx-Fu-xIs">
@@ -272,39 +240,7 @@ We cater specifically as a one-stop-all for you to find any past exam paper for 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a98-aP-jBW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4558" y="143"/>
-        </scene>
-        <!--Years-->
-        <scene sceneID="25F-NI-vzv">
-            <objects>
-                <tableViewController id="UNu-0W-sKC" customClass="YearsTableVC" customModule="APlusPapersIB" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="my0-9x-kaS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="wCE-GJ-6Nf">
-                                <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wCE-GJ-6Nf" id="SGL-qo-Hfs">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="UNu-0W-sKC" id="gel-re-61I"/>
-                            <outlet property="delegate" destination="UNu-0W-sKC" id="Kni-WC-BXy"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Years" id="J9Y-22-iDp"/>
-                    <connections>
-                        <segue destination="cfL-wd-CMn" kind="show" identifier="seguetopapers" id="vsG-ZZ-8v0"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Srs-cl-7rJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3031.884057971015" y="140.21739130434784"/>
+            <point key="canvasLocation" x="5479" y="130"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bVg-Je-MlS">
@@ -360,8 +296,141 @@ We cater specifically as a one-stop-all for you to find any past exam paper for 
             </objects>
             <point key="canvasLocation" x="-113" y="892"/>
         </scene>
+        <!--Variants TableVC-->
+        <scene sceneID="Kn6-N6-UVL">
+            <objects>
+                <tableViewController id="hPq-Sj-1F7" customClass="VariantsTableVC" customModule="APlusPapersIB" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="KZt-F2-WC2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="s31-uI-f9T">
+                                <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="s31-uI-f9T" id="pcH-13-r2p">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="hPq-Sj-1F7" id="HUA-ul-S6L"/>
+                            <outlet property="delegate" destination="hPq-Sj-1F7" id="bQL-wL-aUY"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Tsl-cn-Jm2"/>
+                    <connections>
+                        <outlet property="navTitle" destination="Tsl-cn-Jm2" id="aj5-5w-YuK"/>
+                        <segue destination="LkU-i3-zDb" kind="show" identifier="seguetolevels" id="RYz-QD-jV1"/>
+                        <segue destination="ilt-Cl-Xtz" kind="show" identifier="seguetoyears" id="33g-Fa-rED"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ctd-uH-qlv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3017" y="143"/>
+        </scene>
+        <!--Papers-->
+        <scene sceneID="z0p-ci-qms">
+            <objects>
+                <tableViewController id="Ptm-5l-917" customClass="PapersTableVC" customModule="APlusPapersIB" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="v7I-Kb-zxv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="33y-Lp-JoV">
+                                <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="33y-Lp-JoV" id="xtj-0c-JLK">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Ptm-5l-917" id="aom-W5-qW3"/>
+                            <outlet property="delegate" destination="Ptm-5l-917" id="54g-qz-LLo"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Papers" id="uFl-V9-Cry"/>
+                    <connections>
+                        <segue destination="50K-f7-e5d" kind="show" identifier="seguetowebview" id="dSL-kE-pO0"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Qz-n5-50X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4673" y="130"/>
+        </scene>
+        <!--Levels-->
+        <scene sceneID="w4x-qJ-e5u">
+            <objects>
+                <tableViewController id="LkU-i3-zDb" customClass="LevelTableVC" customModule="APlusPapersIB" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ni6-dP-Tyl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="OEL-AR-t7G">
+                                <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OEL-AR-t7G" id="JXG-Qn-Y5o">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="LkU-i3-zDb" id="wek-ma-SCj"/>
+                            <outlet property="delegate" destination="LkU-i3-zDb" id="SFa-nh-NHn"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Levels" id="atm-bV-KhS"/>
+                    <connections>
+                        <segue destination="ilt-Cl-Xtz" kind="show" identifier="segueleveltoyears" id="eG4-2u-oQg"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dpB-Yy-6Lj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3836" y="-293"/>
+        </scene>
+        <!--Years-->
+        <scene sceneID="VTj-HA-crO">
+            <objects>
+                <tableViewController id="ilt-Cl-Xtz" customClass="YearsTableVC" customModule="APlusPapersIB" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="uZz-SE-eNb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="YD3-ij-NGd">
+                                <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YD3-ij-NGd" id="ebX-dQ-bKI">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ilt-Cl-Xtz" id="CAV-7f-a8x"/>
+                            <outlet property="delegate" destination="ilt-Cl-Xtz" id="x9n-Vh-4D7"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Years" id="4md-YT-0IT"/>
+                    <connections>
+                        <segue destination="Ptm-5l-917" kind="show" identifier="seguetopapers" id="Jcy-mA-s2j"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Ge-Nb-c8j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3836" y="499"/>
+        </scene>
     </scenes>
     <resources>
         <image name="AirPrint" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="eG4-2u-oQg"/>
+    </inferredMetricsTieBreakers>
 </document>

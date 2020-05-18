@@ -39,6 +39,7 @@ class PDFViewController: UIViewController, GADInterstitialDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         interstitial = createAndLoadInterstitial()
+//        print(pdfLink)
         if let url = URL(string: pdfLink) {
             let request = URLRequest(url: url)
             webView?.load(request)
@@ -64,11 +65,7 @@ class PDFViewController: UIViewController, GADInterstitialDelegate {
     func createAndLoadInterstitial() -> GADInterstitial {
         let request = GADRequest()
         var interstitials: GADInterstitial
-        if String(UIDevice.current.identifierForVendor!.uuidString) == "DEF47FC4-E5F6-4286-A12C-01EAB2D74F43" {
-            interstitials = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
-        } else {
-            interstitials = GADInterstitial(adUnitID: "ca-app-pub-1247105887511638/9360843256")
-        }
+        interstitials = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")    // test ad id
         interstitials.delegate = self
         interstitials.load(request)
         return interstitials
