@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     var subjectGroups = [String: [String]]()
     var groupNames = [String]()
     var links = [String]()
-    let imageArray = ["image1.jpg", "image2.jpg", "image3.jpg", "image4.jpg", "image5.jpg"]
+    let imageArray = ["image1.jpg"]
     var networkAvailable = Bool()
 
     private let reachability = SCNetworkReachabilityCreateWithName(nil, "https://pastpapers.papacambridge.com/?dir=AQA/A-Level")

@@ -12,6 +12,7 @@ class GroupsTableVC: UITableViewController {
 
     var passedOnNames = [String: [String]]()
     var selectedGroup = [String]()
+    var groupName = ["Group 1&2- Literature&Language Acquisition", "Group 3 - Individuals and Societies", "Group 4 - Sciences", "Group 5 - Mathematics", "Group 6 - The Arts"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,19 +20,27 @@ class GroupsTableVC: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return passedOnNames.count
+        return groupName.count
     }
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = passedOnNames.keys.sorted()[indexPath.row]
+        cell.textLabel?.text = groupName[indexPath.row]
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedGroup = passedOnNames[passedOnNames.keys.sorted()[indexPath.row]]!
-//        print(selectedGroup)
+        selectedGroup.removeAll()
+        for keys in passedOnNames.keys {
+            if groupName[indexPath.row].contains(keys) {
+                if selectedGroup.isEmpty {
+                    selectedGroup = passedOnNames[keys]!
+                } else {
+                    selectedGroup.append(contentsOf: passedOnNames[keys]!)
+                }
+            }
+        }
         self.performSegue(withIdentifier: "seguetosubjects", sender: self)
     }
 
