@@ -9,6 +9,3 @@ target 'A+Papers (IB)' do
 	pod 'SCLAlertView'
 	pod 'Google-Mobile-Ads-SDK'
 end
-target 'APlusPapersIBTests' do
-	pod 'Alamofire', '~> 4.5'
-end
