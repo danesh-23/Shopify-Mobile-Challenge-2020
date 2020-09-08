@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseAnalytics
+//import GoogleMobileAds
 
 class DownloadedFilesTableViewController: UITableViewController {
     
@@ -15,15 +16,14 @@ class DownloadedFilesTableViewController: UITableViewController {
     var documentInteractionController = UIDocumentInteractionController()
     let fileManager = FileManager.default
     let titleName = NSLocalizedString("Downloaded Papers", comment: "")
-//        var interstitialAd: GADInterstitial?
+//    var interstitialAd: GADInterstitial?
+//    refer to AppDelegate file for explanation
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        Analytics.logEvent("downloadedPapersView", parameters: [
-        "screenName": "DownloadedFilesTableViewController" as NSObject,
-        "full_text": "User opened downloaded papers view" as NSObject
-        ])
-//            interstitialAd = createAndLoadInterstitial()
+        
+//        callAnalytics()  -> add GoogleService-Info.plist file then uncomment
+//        interstitialAd = createAndLoadInterstitial()
         self.navigationController?.navigationBar.topItem?.title = titleName
         documentInteractionController.delegate = self as UIDocumentInteractionControllerDelegate
         let documentsURL = fileManager.urls(for: .libraryDirectory, in: .userDomainMask)[0]
@@ -38,6 +38,44 @@ class DownloadedFilesTableViewController: UITableViewController {
         } catch {
             print("Error while enumerating files \(documentsURL.path): \(error.localizedDescription)")
         }
+    }
+    
+//    func createAndLoadInterstitial() -> GADInterstitial {
+//        let request = GADRequest()
+//        var interstitials: GADInterstitial
+//        // test ad unit id
+//        interstitials = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+//        interstitials.delegate = self
+//        interstitials.load(request)
+//        return interstitials
+//    }
+    
+//    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
+//         interstitialAd = createAndLoadInterstitial()
+//     }
+    
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(true)
+//        if interstitialAd != nil {
+//            if interstitialAd!.isReady {
+//                interstitialAd?.present(fromRootViewController: self)
+//            } else {
+//                // use a timer to repeatedly check when the ad has loaded and present it
+//                Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
+//                    if self.interstitialAd!.isReady {
+//                        self.interstitialAd?.present(fromRootViewController: self)
+//                        timer.invalidate()
+//                    }
+//                }
+//            }
+//        }
+//    }
+    
+    func callAnalytics() {
+        Analytics.logEvent("downloadedPapersView", parameters: [
+        "screenName": "DownloadedFilesTableViewController" as NSObject,
+        "full_text": "User opened downloaded papers view" as NSObject
+        ])
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -55,7 +93,6 @@ class DownloadedFilesTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        documentInteractionController.dismissPreview(animated: true)
         self.share(url: savedFiles[indexPath.row])
     }
 
@@ -80,7 +117,7 @@ class DownloadedFilesTableViewController: UITableViewController {
 }
 
 extension DownloadedFilesTableViewController {
-    /// This function will set all the required properties, and then provide a preview for the document
+//    This function will set all the required properties, and then provide a preview for the document
     func share(url: URL) {
         documentInteractionController.url = url
         documentInteractionController.uti = url.typeIdentifier ?? "public.data, public.content"
@@ -90,7 +127,7 @@ extension DownloadedFilesTableViewController {
 }
 
 extension DownloadedFilesTableViewController: UIDocumentInteractionControllerDelegate {
-    /// If presenting atop a navigation stack, provide the navigation controller in order to animate in a manner consistent with the rest of the platform
+//    If presenting atop a navigation stack, provide the navigation controller in order to animate in a manner consistent with the rest of the platform
     func documentInteractionControllerViewControllerForPreview(_ controller: UIDocumentInteractionController) -> UIViewController {
         guard let navVC = self.navigationController else {
             return self

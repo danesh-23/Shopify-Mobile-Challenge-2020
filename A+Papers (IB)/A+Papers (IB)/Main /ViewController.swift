@@ -21,8 +21,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var seeibgroupsbtn: UIButton!
     @IBOutlet weak var helpPagesBtn: UIButton!
     var titleNames = [String]()
-//    var groupNames = [String]()
-//    var subjectGroups = [String: [String]]()
     let imageArray = ["image1.jpg", "image2.jpg", "image3.jpg", "image4.jpg", "image5.jpg"]
     var networkAvailable = Bool()
     var links = [String]()
@@ -102,28 +100,6 @@ class ViewController: UIViewController {
         var names = [String]()
         imageView.image = randomImageGenerator()
         if networkAvailable {
-//            if let filePath = Bundle.main.path(forResource: "papers", ofType: "txt") {
-//                do {
-//                    let content = try String(contentsOfFile: filePath)
-//    //                print(content)
-//                    var count = 0
-//                    let array = content.components(separatedBy: ",")
-//                    while count < array.count {
-//                        let key = array[count+1].replacingOccurrences(of: "\n", with: "")
-//                        if subjectGroups[key] == nil {
-//                            subjectGroups[key] = [array[count].replacingOccurrences(of: "\n", with: "")]
-//                        } else {
-//                            subjectGroups[key]?.append(array[count].replacingOccurrences(of: "\n", with: ""))
-//                        }
-//                        count += 2
-//                    }
-//                } catch {
-//                    print("couldnt get contents")
-//                }
-////                print(subjectGroups)
-//            }
-//            names.removeFirst()
-//            names.removeFirst()
             Alamofire.request("https://www.ibdocuments.com/IB%20PAST%20PAPERS%20-%20SUBJECT/").responseString { response in
                 for values in response.description.components(separatedBy: "a href") {
                     
@@ -131,8 +107,6 @@ class ViewController: UIViewController {
                         names.append(values)
                     }
                 }
-//                print(names)
-
                 for values in names {
                     if values.contains("/"), !self.links.contains(values.components(separatedBy: "/")[0].replacingOccurrences(of: "=\"", with: "")) {
                         let clean = values.components(separatedBy: "/")[0].replacingOccurrences(of: "=\"", with: "")
@@ -140,12 +114,12 @@ class ViewController: UIViewController {
                         self.links.append(clean)
                     }
                 }
-                
-               // print(self.titleNames)
-            //    print(self.links)
-
             }
         }
+//        callAnalytics() -> add GoogleService-Info.plist file then uncomment
+    }
+    
+    func callAnalytics() {
         Analytics.logEvent(AnalyticsEventAppOpen, parameters: [
         "screenName": "ViewController" as NSObject,
         "full_text": "User opened app to first page" as NSObject
@@ -190,9 +164,6 @@ class ViewController: UIViewController {
             "full_text": "User opened app for first time" as NSObject
             ])
         }
-        UserDefaults.standard.set(false, forKey: "papersaverfirst")
-        UserDefaults.standard.set(false, forKey: "papersaversecond")
-        UserDefaults.standard.set(false, forKey: "papersaverfirsttime")
     }
 }
 

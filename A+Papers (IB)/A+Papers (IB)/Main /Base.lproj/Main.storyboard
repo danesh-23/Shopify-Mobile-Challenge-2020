@@ -168,40 +168,6 @@ We cater specifically as a one-stop-all for you to find any past exam paper for 
             </objects>
             <point key="canvasLocation" x="1497.1014492753625" y="134.5108695652174"/>
         </scene>
-        <!--Variants TableVC-->
-        <scene sceneID="shB-oo-x7k">
-            <objects>
-                <tableViewController id="Fuk-vp-crF" customClass="VariantsTableVC" customModule="APlusPapersIB" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="i1V-Uy-Ghe">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="7bc-7g-dOl">
-                                <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7bc-7g-dOl" id="DkY-1B-ynW">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="Fuk-vp-crF" id="AZd-i8-Mhm"/>
-                            <outlet property="delegate" destination="Fuk-vp-crF" id="0pd-6t-Get"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="Tb1-uT-Ea5"/>
-                    <connections>
-                        <outlet property="navTitle" destination="Tb1-uT-Ea5" id="ZOg-KQ-H33"/>
-                        <segue destination="pwh-pM-U9U" kind="show" identifier="seguetolevels" id="cge-je-c0e"/>
-                        <segue destination="UNu-0W-sKC" kind="show" identifier="seguefromvariantstoyears" id="zha-SA-zM2"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WV4-yR-vKs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3110" y="143"/>
-        </scene>
         <!--Subjects-->
         <scene sceneID="asA-Bj-65S">
             <objects>
@@ -227,7 +193,6 @@ We cater specifically as a one-stop-all for you to find any past exam paper for 
                     </tableView>
                     <navigationItem key="navigationItem" title="Subjects" id="n4i-ic-MQt"/>
                     <connections>
-                        <segue destination="Fuk-vp-crF" kind="show" identifier="seguetovariant" id="g4m-Kn-ZgN"/>
                         <segue destination="UNu-0W-sKC" kind="show" identifier="seguetoyears" id="5J9-RT-ViJ"/>
                     </connections>
                 </tableViewController>
@@ -265,7 +230,7 @@ We cater specifically as a one-stop-all for you to find any past exam paper for 
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A85-NR-mju" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4783" y="143"/>
+            <point key="canvasLocation" x="3895" y="143"/>
         </scene>
         <!--PDF Paper-->
         <scene sceneID="hvx-Fu-xIs">
@@ -307,39 +272,7 @@ We cater specifically as a one-stop-all for you to find any past exam paper for 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a98-aP-jBW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5538" y="143"/>
-        </scene>
-        <!--Levels-->
-        <scene sceneID="Ibm-Yt-8Gg">
-            <objects>
-                <tableViewController id="pwh-pM-U9U" customClass="LevelTableVC" customModule="APlusPapersIB" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="p0w-Sb-7y3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="4R2-BD-dNp">
-                                <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4R2-BD-dNp" id="PRX-aJ-fPG">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="pwh-pM-U9U" id="kou-hn-36O"/>
-                            <outlet property="delegate" destination="pwh-pM-U9U" id="GXE-9X-1dm"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Levels" id="FrB-Jy-tp6"/>
-                    <connections>
-                        <segue destination="UNu-0W-sKC" kind="show" identifier="segueleveltoyears" id="jdY-yN-Lmg"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="npA-Qb-KbE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3945" y="-1157"/>
+            <point key="canvasLocation" x="4650" y="143"/>
         </scene>
         <!--Years-->
         <scene sceneID="25F-NI-vzv">
@@ -371,7 +304,7 @@ We cater specifically as a one-stop-all for you to find any past exam paper for 
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Srs-cl-7rJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3945" y="143"/>
+            <point key="canvasLocation" x="3058" y="143"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bVg-Je-MlS">
@@ -431,7 +364,4 @@ We cater specifically as a one-stop-all for you to find any past exam paper for 
     <resources>
         <image name="AirPrint" width="30" height="30"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="5J9-RT-ViJ"/>
-    </inferredMetricsTieBreakers>
 </document>

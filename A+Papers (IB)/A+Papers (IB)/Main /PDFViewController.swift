@@ -9,16 +9,17 @@
 import UIKit
 import WebKit
 import SCLAlertView
-import GoogleMobileAds
+//import GoogleMobileAds
 import FirebaseAnalytics
 
-class PDFViewController: UIViewController, GADInterstitialDelegate {
+class PDFViewController: UIViewController {
 
     @IBOutlet weak var airPrintItem: UIBarButtonItem!
     var pdfLink = String()
     @IBOutlet weak var webView: WKWebView!
     var pdfFileName = String()
-    var interstitial: GADInterstitial?
+//    var interstitial: GADInterstitial?
+// refer to AppDelegate file for explanation
     
     @IBAction func airPrintBtn(_ sender: Any) {
         if UIPrintInteractionController.canPrint(URL(string: pdfLink)!) {
@@ -39,50 +40,47 @@ class PDFViewController: UIViewController, GADInterstitialDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        interstitial = createAndLoadInterstitial()
+//        interstitial = createAndLoadInterstitial()
         if let url = URL(string: pdfLink) {
             let request = URLRequest(url: url)
             webView?.load(request)
-            Analytics.logEvent("paper_loaded", parameters: [
-            "screenName": "PDFViewController" as NSObject,
-            "full_text": "PDF paper loaded" as NSObject
-            ])
+//            callAnalytics()  -> add GoogleService-Info.plist file then uncomment
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        if interstitial != nil {
-            if interstitial!.isReady {
-                interstitial?.present(fromRootViewController: self)
-            } else {
-                // use a timer to repeatedly check when the ad has loaded and present it
-                Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
-                    if self.interstitial!.isReady {
-                        self.interstitial?.present(fromRootViewController: self)
-                        timer.invalidate()
-                    }
-                }
-            }
-        }
+    func callAnalytics() {
+        Analytics.logEvent("paper_loaded", parameters: [
+        "screenName": "PDFViewController" as NSObject,
+        "full_text": "PDF paper loaded" as NSObject
+        ])
     }
     
-    func createAndLoadInterstitial() -> GADInterstitial {
-        let request = GADRequest()
-        var interstitials: GADInterstitial
-        if String(UIDevice.current.identifierForVendor!.uuidString) == "DEF47FC4-E5F6-4286-A12C-01EAB2D74F43" {
-            interstitials = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
-            interstitials.delegate = self
-            interstitials.load(request)
-            return interstitials
-        }
-        interstitials = GADInterstitial(adUnitID: "ca-app-pub-1247105887511638/9360843256")
-        interstitials.delegate = self
-        interstitials.load(request)
-        return interstitials
-    }
-    
-    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
-         interstitial = createAndLoadInterstitial()
-//         print("DISMISSEDDD")
-     }
+//    override func viewDidAppear(_ animated: Bool) {
+//        if interstitial != nil {
+//            if interstitial!.isReady {
+//                interstitial?.present(fromRootViewController: self)
+//            } else {
+//                // use a timer to repeatedly check when the ad has loaded and present it
+//                Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
+//                    if self.interstitial!.isReady {
+//                        self.interstitial?.present(fromRootViewController: self)
+//                        timer.invalidate()
+//                    }
+//                }
+//            }
+//        }
+//    }
+//
+//    func createAndLoadInterstitial() -> GADInterstitial {
+//        let request = GADRequest()
+//        var interstitials: GADInterstitial
+//        interstitials = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+//        interstitials.delegate = self
+//        interstitials.load(request)
+//        return interstitials
+//    }
+//
+//    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
+//         interstitial = createAndLoadInterstitial()
+//     }
 }

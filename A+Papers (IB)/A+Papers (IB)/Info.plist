@@ -20,8 +20,6 @@
 	<string>0</string>
 	<key>LSSupportsOpeningDocumentsInPlace</key>
 	<true/>
-	<key>GADApplicationIdentifier</key>
-	<string>ca-app-pub-1247105887511638~4355928583</string>
 	<key>UIFileSharingEnabled</key>
 	<true/>
 	<key>LSRequiresIPhoneOS</key>
