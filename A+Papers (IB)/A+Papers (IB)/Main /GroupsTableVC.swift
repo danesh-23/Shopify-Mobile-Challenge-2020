@@ -10,12 +10,19 @@ import UIKit
 
 class GroupsTableVC: UITableViewController {
 
-    var passedOnNames = [String: [String]]()
-    var selectedGroup = [String]()
-    var groupName = ["Group 1&2- Literature&Language Acquisition", "Group 3 - Individuals and Societies", "Group 4 - Sciences", "Group 5 - Mathematics", "Group 6 - The Arts"]
+//    var passedOnNames = [String: [String]]()
+    var selectedGroup = String()
+    var passedOnLinks = [String]()
+    var groupName = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+//        print(passedOnNames)
+//        print(names)
+//        for values in passedOnNames {
+//            titleName.append(removeGibberish(dirtyText: ((values.components(separatedBy: "<strong>")[1]).replacingOccurrences(of: "<span>", with: "")).components(separatedBy: "</strong>")[0]).replacingOccurrences(of: "Langauage", with: "Language"))
+//        }
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -31,23 +38,33 @@ class GroupsTableVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedGroup.removeAll()
-        for keys in passedOnNames.keys {
-            if groupName[indexPath.row].contains(keys) {
-                if selectedGroup.isEmpty {
-                    selectedGroup = passedOnNames[keys]!
-                } else {
-                    selectedGroup.append(contentsOf: passedOnNames[keys]!)
-                }
+//        selectedGroup.removeAll()
+//        for keys in passedOnNames.keys {
+//            print(keys)
+//            if groupName[indexPath.row].contains(keys) {
+//                if selectedGroup.isEmpty {
+//                    selectedGroup = passedOnNames[keys]!
+//                } else {
+//                    selectedGroup.append(contentsOf: passedOnNames[keys]!)
+//                }
+//            }
+//        }
+//        print(selectedGroup)
+//        self.performSegue(withIdentifier: "seguetosubjects", sender: self)
+        
+        
+        for values in passedOnLinks {
+            if values.contains(makeTextHtmlSearchable(text: groupName[indexPath.row])) {
+                selectedGroup = "https://www.ibdocuments.com/IB%20PAST%20PAPERS%20-%20SUBJECT/\(values)"
+                self.performSegue(withIdentifier: "seguetosubjects", sender: self)
             }
         }
-        self.performSegue(withIdentifier: "seguetosubjects", sender: self)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "seguetosubjects" {
             let nextView = segue.destination as! SubjectsTableVC
-            nextView.passedOnSubjects = selectedGroup
+            nextView.passedOnGroup = selectedGroup
         }
     }
     

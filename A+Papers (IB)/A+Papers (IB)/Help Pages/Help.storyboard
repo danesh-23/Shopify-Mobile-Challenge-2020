@@ -42,7 +42,7 @@ For any further enquiries or suggestions or improvements/complaints about the ap
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="34"/>
+                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="36"/>
                                 </variation>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Help" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HEJ-X1-iPw">
@@ -96,7 +96,7 @@ For any further enquiries or suggestions or improvements/complaints about the ap
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="32"/>
+                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="36"/>
                                 </variation>
                             </label>
                         </subviews>
@@ -154,7 +154,7 @@ We introduce AirPrint, the latest feature which allows users to download any pap
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="33"/>
+                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="36"/>
                                 </variation>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Using AirPrint" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CRo-dP-imP">
@@ -163,7 +163,7 @@ We introduce AirPrint, the latest feature which allows users to download any pap
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="36"/>
+                                    <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="38"/>
                                 </variation>
                             </label>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="airprint_ss" translatesAutoresizingMaskIntoConstraints="NO" id="F04-9B-dgN">
@@ -219,7 +219,7 @@ It would connect wirelessly to any surrounding printers that support AirPrint, w
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="33"/>
+                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="36"/>
                                 </variation>
                             </textView>
                         </subviews>

@@ -10,20 +10,22 @@ import UIKit
 import Alamofire
 import SystemConfiguration
 import SCLAlertView
+import FirebaseAnalytics
 
 class ViewController: UIViewController {
-    
+
     @IBOutlet weak var titleText: UILabel!
     @IBOutlet weak var mainText: UITextView!
     @IBOutlet weak var hiddenErrorMessage: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var seeibgroupsbtn: UIButton!
     @IBOutlet weak var helpPagesBtn: UIButton!
-    var subjectGroups = [String: [String]]()
-    var groupNames = [String]()
-    var links = [String]()
-    let imageArray = ["image1.jpg"]
+    var titleNames = [String]()
+//    var groupNames = [String]()
+//    var subjectGroups = [String: [String]]()
+    let imageArray = ["image1.jpg", "image2.jpg", "image3.jpg", "image4.jpg", "image5.jpg"]
     var networkAvailable = Bool()
+    var links = [String]()
 
     private let reachability = SCNetworkReachabilityCreateWithName(nil, "https://pastpapers.papacambridge.com/?dir=AQA/A-Level")
     
@@ -59,7 +61,7 @@ class ViewController: UIViewController {
             SCLAlertView().showError(NSLocalizedString("You are not connected to the internet.", comment: ""), subTitle: NSLocalizedString("You need an internet connection to browse through our papers.", comment: ""))
             return
         }
-        if subjectGroups.count < 3 {
+        if titleNames.count < 3 {
             hiddenErrorMessage.isHidden = false
         } else {
             self.performSegue(withIdentifier: "seguetogroups", sender: self)
@@ -82,7 +84,7 @@ class ViewController: UIViewController {
             alert.addButton(NSLocalizedString("Get PaperSaver", comment: "")) {
                 self.pushViewsFromNavButtons(storyboardName: "Help", vcIdentifier: "IAPViewController")
                 }
-            alert.showInfo(NSLocalizedString("PaperSaver Feature Not Unlocked.", comment: ""), subTitle: NSLocalizedString("You have not unlocked the PaperSaver feature yet. Click 'Get PperSaver' button below to see it :)", comment: ""))
+            alert.showInfo(NSLocalizedString("PaperSaver Feature Not Unlocked.", comment: ""), subTitle: NSLocalizedString("You have not unlocked the PaperSaver feature yet. Click 'Get PaperSaver' button below to see it :)", comment: ""))
         }
     }
     
@@ -96,35 +98,65 @@ class ViewController: UIViewController {
         mainText.text = NSLocalizedString("Welcome to A+Papers. We offer resources for IB students doing the International Baccalaureate programme.\n\nWe cater specifically as a one-stop-all for you to find any past exam paper for revision that you could possibly want.", comment: "")
         seeibgroupsbtn.setTitle(NSLocalizedString("See IB Papers", comment: ""), for: .normal)
         helpPagesBtn.setTitle(NSLocalizedString("Help", comment: ""), for: .normal)
-
+        
+        var names = [String]()
         imageView.image = randomImageGenerator()
         if networkAvailable {
-            if let filePath = Bundle.main.path(forResource: "papers", ofType: "txt") {
-                do {
-                    let content = try String(contentsOfFile: filePath)
-    //                print(content)
-                    var count = 0
-                    let array = content.components(separatedBy: ",")
-                    while count < array.count {
-                        let key = array[count+1].replacingOccurrences(of: "\n", with: "")
-                        if subjectGroups[key] == nil {
-                            subjectGroups[key] = [array[count].replacingOccurrences(of: "\n", with: "")]
-                        } else {
-                            subjectGroups[key]?.append(array[count].replacingOccurrences(of: "\n", with: ""))
-                        }
-                        count += 2
+//            if let filePath = Bundle.main.path(forResource: "papers", ofType: "txt") {
+//                do {
+//                    let content = try String(contentsOfFile: filePath)
+//    //                print(content)
+//                    var count = 0
+//                    let array = content.components(separatedBy: ",")
+//                    while count < array.count {
+//                        let key = array[count+1].replacingOccurrences(of: "\n", with: "")
+//                        if subjectGroups[key] == nil {
+//                            subjectGroups[key] = [array[count].replacingOccurrences(of: "\n", with: "")]
+//                        } else {
+//                            subjectGroups[key]?.append(array[count].replacingOccurrences(of: "\n", with: ""))
+//                        }
+//                        count += 2
+//                    }
+//                } catch {
+//                    print("couldnt get contents")
+//                }
+////                print(subjectGroups)
+//            }
+//            names.removeFirst()
+//            names.removeFirst()
+            Alamofire.request("https://www.ibdocuments.com/IB%20PAST%20PAPERS%20-%20SUBJECT/").responseString { response in
+                for values in response.description.components(separatedBy: "a href") {
+                    
+                    if values.contains("Group") {
+                        names.append(values)
                     }
-                } catch {
-                    print("couldnt get contents")
                 }
+//                print(names)
+
+                for values in names {
+                    if values.contains("/"), !self.links.contains(values.components(separatedBy: "/")[0].replacingOccurrences(of: "=\"", with: "")) {
+                        let clean = values.components(separatedBy: "/")[0].replacingOccurrences(of: "=\"", with: "")
+                        self.titleNames.append(clean.replacingOccurrences(of: "%20", with: " "))
+                        self.links.append(clean)
+                    }
+                }
+                
+               // print(self.titleNames)
+            //    print(self.links)
+
             }
         }
+        Analytics.logEvent(AnalyticsEventAppOpen, parameters: [
+        "screenName": "ViewController" as NSObject,
+        "full_text": "User opened app to first page" as NSObject
+        ])
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "seguetogroups" {
             let nextView = segue.destination as! GroupsTableVC
-            nextView.passedOnNames = subjectGroups
+            nextView.passedOnLinks = links
+            nextView.groupName = titleNames
         }
     }
     
@@ -134,36 +166,33 @@ class ViewController: UIViewController {
     }
     
     func isAppAlreadyLaunchedOnce() {
-        let defaults = UserDefaults.standard.object(forKey: "papersaverfirsttime")
-        if defaults as? Bool != true {
-            UserDefaults.standard.set(true, forKey: "papersaverfirsttime")
+        let defaults = UserDefaults.standard.object(forKey: "firsttimeuserspopup")
+        let paperSaverDefaults = UserDefaults.standard.object(forKey: "papersaverreminder")
+        if defaults as? Bool == true && paperSaverDefaults as? Bool == true {
+            print("")
+        } else if defaults as? Bool == true && paperSaverDefaults as? Bool != true {
+            let alert = SCLAlertView()
+            alert.addButton("See PaperSaver Feature") {
+                let storyboard = UIStoryboard(name: "Help", bundle: nil)
+                let popup = storyboard.instantiateInitialViewController()
+                self.present(popup!, animated: true, completion: nil)
+            }
+            alert.showInfo("Want to see our latest PaperSaver feature?", subTitle: "Download any papers you want so you don't ever need an internet connection to study :)")
+            UserDefaults.standard.set(true, forKey: "papersaverreminder")
+        } else {
+            UserDefaults.standard.set(true, forKey: "firsttimeuserspopup")
             let viewController = UIStoryboard(name: "FirstTime", bundle: nil).instantiateInitialViewController()
             if let navigator = navigationController {
                 navigator.pushViewController(viewController!, animated: true)
             }
+            Analytics.logEvent("firstTimeGuideOpened", parameters: [
+            "screenName": "ViewController" as NSObject,
+            "full_text": "User opened app for first time" as NSObject
+            ])
         }
-        UserDefaults.standard.set(false, forKey: "firsttimeuserspopup")
-    }
-    
-    func GetNamesAndLinks(string: String) {
-        var names = [String]()
-        var titleNames = [String]()
-        
-        for values in string.components(separatedBy: "et_pb_text_inner") {
-            if values.contains("Group") {
-                names.append(values)
-            }
-        }
-
-        for values in names {
-            titleNames.append(values.components(separatedBy: "</span>")[0].components(separatedBy: "\">")[1])
-            self.links.append(values.components(separatedBy: "href=")[1].components(separatedBy: "\"")[1])
-        }
-
-        for var values in titleNames {
-            values.removeSubrange(values.startIndex..<values.index(values.startIndex, offsetBy: 4))
-            self.groupNames.append(values)
-        }
+        UserDefaults.standard.set(false, forKey: "papersaverfirst")
+        UserDefaults.standard.set(false, forKey: "papersaversecond")
+        UserDefaults.standard.set(false, forKey: "papersaverfirsttime")
     }
 }
 

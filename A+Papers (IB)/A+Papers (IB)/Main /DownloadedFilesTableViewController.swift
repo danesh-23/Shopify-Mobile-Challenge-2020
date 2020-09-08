@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAnalytics
 
 class DownloadedFilesTableViewController: UITableViewController {
     
@@ -18,7 +19,10 @@ class DownloadedFilesTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        Analytics.logEvent("downloadedPapersView", parameters: [
+        "screenName": "DownloadedFilesTableViewController" as NSObject,
+        "full_text": "User opened downloaded papers view" as NSObject
+        ])
 //            interstitialAd = createAndLoadInterstitial()
         self.navigationController?.navigationBar.topItem?.title = titleName
         documentInteractionController.delegate = self as UIDocumentInteractionControllerDelegate
@@ -45,15 +49,14 @@ class DownloadedFilesTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CellSaved", for: indexPath)
-        cell.textLabel?.text = savedFiles[indexPath.row].lastPathComponent
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        cell.textLabel?.text = removeGibberish(dirtyText: savedFiles[indexPath.row].lastPathComponent).replacingOccurrences(of: ".pdf", with: "")
         return cell
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        documentInteractionController.dismissPreview(animated: true)
+//        documentInteractionController.dismissPreview(animated: true)
         self.share(url: savedFiles[indexPath.row])
-        print(savedFiles[indexPath.row])
     }
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
