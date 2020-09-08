@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import SCLAlertView
 
 class VariantsTableVC: UITableViewController {
 
@@ -31,7 +32,6 @@ class VariantsTableVC: UITableViewController {
                     }
                 }
             }
-            
             if self.extraView {
                 self.navTitle.title = "Variant"
             } else {
@@ -39,6 +39,13 @@ class VariantsTableVC: UITableViewController {
             }
             
             DispatchQueue.main.async {
+                if self.variants.isEmpty {
+                    let alert = SCLAlertView()
+                    alert.addButton("Go back") {
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                    alert.showInfo("No Available Papers", subTitle: "There are currently no available papers for this subject.")
+                }
                 self.tableView.reloadData()
             }
         }
@@ -47,7 +54,6 @@ class VariantsTableVC: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return variants.count
     }
-
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)

@@ -10,6 +10,7 @@ import UIKit
 import WebKit
 import SCLAlertView
 import GoogleMobileAds
+import FirebaseAnalytics
 
 class PDFViewController: UIViewController, GADInterstitialDelegate {
 
@@ -39,10 +40,13 @@ class PDFViewController: UIViewController, GADInterstitialDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         interstitial = createAndLoadInterstitial()
-//        print(pdfLink)
         if let url = URL(string: pdfLink) {
             let request = URLRequest(url: url)
             webView?.load(request)
+            Analytics.logEvent("paper_loaded", parameters: [
+            "screenName": "PDFViewController" as NSObject,
+            "full_text": "PDF paper loaded" as NSObject
+            ])
         }
     }
     
@@ -65,7 +69,13 @@ class PDFViewController: UIViewController, GADInterstitialDelegate {
     func createAndLoadInterstitial() -> GADInterstitial {
         let request = GADRequest()
         var interstitials: GADInterstitial
-        interstitials = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")    // test ad id
+        if String(UIDevice.current.identifierForVendor!.uuidString) == "DEF47FC4-E5F6-4286-A12C-01EAB2D74F43" {
+            interstitials = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+            interstitials.delegate = self
+            interstitials.load(request)
+            return interstitials
+        }
+        interstitials = GADInterstitial(adUnitID: "ca-app-pub-1247105887511638/9360843256")
         interstitials.delegate = self
         interstitials.load(request)
         return interstitials

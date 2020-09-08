@@ -9,6 +9,7 @@
 import UIKit
 import MessageUI
 import SCLAlertView
+import FirebaseAnalytics
 
 let normalFont = UIFont(name: "Futura-Medium", size: 18)
 let boldFont = UIFont(name: "Futura-Bold", size: 22)
@@ -44,6 +45,10 @@ class FirstHelpPageVC: UIViewController, MFMailComposeViewControllerDelegate {
     }
     
     @IBAction func paperSaverButton(_ sender: Any) {
+        Analytics.logEvent("click_papersaver", parameters: [
+        "screenName": "FirstHelpPageVC" as NSObject,
+        "full_text": "Clicked Get PaperSaver button in Help Storyboard" as NSObject
+        ])
         self.performSegue(withIdentifier: "seguetogetiap", sender: self)
     }
     
@@ -64,6 +69,7 @@ class FirstHelpPageVC: UIViewController, MFMailComposeViewControllerDelegate {
     
     @IBAction func closeHelpBtn(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {

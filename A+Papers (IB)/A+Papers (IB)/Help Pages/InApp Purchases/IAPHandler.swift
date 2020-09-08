@@ -27,9 +27,9 @@ enum IAPHandlerAlertType{
 class IAPHandler: NSObject {
     static let shared = IAPHandler()
     
-    let NON_CONSUMABLE_PURCHASE_PRODUCT_ID = "com.danesh.APlusPapers.AQA.paperSaver"
+    let NON_CONSUMABLE_PURCHASE_PRODUCT_ID = "com.danesh.APlusPapers.IB.paperSaver"
     
-    fileprivate var productID = "com.danesh.APlusPapers.AQA.paperSaver"
+    fileprivate var productID = "com.danesh.APlusPapers.IB.paperSaver"
     fileprivate var productsRequest = SKProductsRequest()
     fileprivate var iapProducts = [SKProduct]()
     
