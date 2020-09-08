@@ -14,30 +14,16 @@ import StoreKit
 class PapersTableVC: UITableViewController {
 
     var passedOnLink = String()
-//    var passedOnYear = String()
     var paperLinks = [String]()
-//    var subjectTitle = String()
     var pdfLink = String()
-//    var paperName = String()
     var downloadedFileName = String()
     var documentInteractionController = UIDocumentInteractionController()
     let itemsObject = UserDefaults.standard.object(forKey: "iapPurchased")
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        print(passedOnLink)
         documentInteractionController.delegate = self as UIDocumentInteractionControllerDelegate
-//        Alamofire.request(passedOnLink).responseString { response in
-//            for values in response.description.components(separatedBy: "td>") {
-//                if values.contains("href") && values.contains(".pdf") {
-//                    self.paperLinks.append(values.components(separatedBy: "\"")[1])
-//                }
-//            }
-//            print(self.paperLinks)
-            
-            
-//        subjectTitle = String(subjectTitle[subjectTitle.startIndex ..< subjectTitle.index(subjectTitle.endIndex, offsetBy: -4)])
-//        print(passedOnYear)
+
         var linkCut = [String]()
         var finalPapers = [String]()
         Alamofire.request(passedOnLink).responseString {response in
@@ -87,19 +73,11 @@ class PapersTableVC: UITableViewController {
         if segue.identifier == "seguetowebview" {
             let nextView = segue.destination as! PDFViewController
             nextView.pdfLink = pdfLink
-//            let name = paperName.replacingOccurrences(of: ".Pdf", with: "")
-//            nextView.pdfFileName = .replacingOccurrences(of: ".pdf", with: "")
         }
     }
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]?
         {
-//            var displayName = [String]()
-//            for values in paperLinks {
-//                let name = values.replacingOccurrences(of: "\(subjectTitle)_", with: "")
-//                displayName.append((name.replacingOccurrences(of: ".pdf", with: "")).replacingOccurrences(of: "_", with: " "))
-//            }
-            
             var array = [UITableViewRowAction]()
             // 1
             downloadedFileName = removeGibberish(dirtyText: paperLinks[indexPath.row])
@@ -113,7 +91,6 @@ class PapersTableVC: UITableViewController {
                     let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: UIAlertAction.Style.cancel, handler: nil)
 
                     downloadMenu.addAction(UIAlertAction(title: NSLocalizedString("Download", comment: ""), style: UIAlertAction.Style.destructive, handler: { action in self.storeAndShare(withURLString: "\(self.passedOnLink)\(self.paperLinks[indexPath.row])")}))
-//                    print(self.passedOnLink + self.paperLinks[indexPath.row])
                     downloadMenu.addAction(cancelAction)
 
                     self.present(downloadMenu, animated: true, completion: nil)
@@ -147,7 +124,7 @@ class PapersTableVC: UITableViewController {
 
 
 extension PapersTableVC {
-    /// This function will set all the required properties, and then provide a preview for the document
+//    This function will set all the required properties, and then provide a preview for the document
     func share(url: URL) {
         documentInteractionController.url = url
         documentInteractionController.uti = url.typeIdentifier ?? "public.data, public.content"
@@ -155,17 +132,10 @@ extension PapersTableVC {
         documentInteractionController.presentPreview(animated: true)
     }
 
-    /// This function will store your document to some temporary URL and then provide sharing, copying, printing, saving options to the user
+//    This function will store your document to some temporary URL and then provide sharing, copying, printing, saving options to the user
     func storeAndShare(withURLString: String) {
         guard let url = URL(string: withURLString) else { return }
-//        print(url)
-        // START YOUR ACTIVITY INDICATOR HERE
-        //        print(url)
-//        let title = (subjectTitle.components(separatedBy: "_"))
-//        var abbrev = String()
-//        for values in title {
-//            abbrev = "\(abbrev)\(values.first ?? "a")"
-//        }
+
         URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data, error == nil else { return }
             let fileManager = FileManager.default
@@ -176,7 +146,6 @@ extension PapersTableVC {
                 let finalURL = fileURL.appendingPathComponent(self.downloadedFileName)
                 try data.write(to: finalURL)
 
-//                print(finalURL)
                 DispatchQueue.main.async {
                     self.share(url: finalURL)
                 }
@@ -189,7 +158,7 @@ extension PapersTableVC {
 }
 
 extension PapersTableVC: UIDocumentInteractionControllerDelegate {
-    /// If presenting atop a navigation stack, provide the navigation controller in order to animate in a manner consistent with the rest of the platform
+//    If presenting atop a navigation stack, provide the navigation controller in order to animate in a manner consistent with the rest of the platform
     func documentInteractionControllerViewControllerForPreview(_ controller: UIDocumentInteractionController) -> UIViewController {
         guard let navVC = self.navigationController else {
             return self

@@ -7,7 +7,6 @@ target 'A+Papers (IB)' do
 
 pod 'Alamofire', '~> 4.5'
 pod 'SCLAlertView'
-pod 'Google-Mobile-Ads-SDK'
 pod 'Firebase/Analytics'
 
   # Pods for A+Papers (IB)
